@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+alias htopcpu="htop -s PERCENT_CPU"
+alias htopmem="htop -s PERCENT_MEM"

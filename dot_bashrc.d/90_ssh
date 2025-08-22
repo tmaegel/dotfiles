@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+alias sshforcepass="ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no"

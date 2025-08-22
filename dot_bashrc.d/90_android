@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+if [[ -d "/opt/flutter/bin" ]]; then
+  if ! [[ "$PATH" =~ "/opt/flutter/bin" ]]; then
+    PATH="/opt/flutter/bin:${PATH}"
+  fi
+fi
+if [[ -d "${ANDROID_HOME}/cmdline-tools/latest/bin" ]]; then
+  if ! [[ "$PATH" =~ "${ANDROID_HOME}/cmdline-tools/latest/bin" ]]; then
+    PATH="${ANDROID_HOME}/cmdline-tools/latest/bin:${PATH}"
+  fi
+fi
+if [[ -d "${ANDROID_HOME}/emulator" ]]; then
+  if ! [[ "$PATH" =~ "${ANDROID_HOME}/emulator" ]]; then
+    PATH="${ANDROID_HOME}/emulator:${PATH}"
+  fi
+fi
+if [[ -d "${ANDROID_HOME}/platform-tools" ]]; then
+  if ! [[ "$PATH" =~ "${ANDROID_HOME}/platform-tools" ]]; then
+    PATH="${ANDROID_HOME}/platform-tools:${PATH}"
+  fi
+fi
+export PATH

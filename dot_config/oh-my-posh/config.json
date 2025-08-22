@@ -1,0 +1,136 @@
+{
+    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+    "blocks": [
+        {
+            "type": "prompt",
+            "alignment": "left",
+            "segments": [
+                {
+                    "properties": {
+                        "always_enabled": true,
+                        "cache_duration": "none",
+                        "status_template": "{{ if eq .Code 0 }}<blue>󰅁</>{{ else if eq .Code 130 }}<blue>󰅁</>{{ else }}<red>󰅁</>{{ end }}"
+                    },
+                    "template": "{{ .String }} ",
+                    "type": "status",
+                    "style": "plain"
+                },
+                {
+                    "properties": {
+                        "cache_duration": "none"
+                    },
+                    "template": "{{ .HostName }} ",
+                    "foreground": "green",
+                    "type": "session",
+                    "style": "plain"
+                },
+                {
+                    "properties": {
+                        "branch_icon": "",
+                        "cache_duration": "none",
+                        "fetch_status": false
+                    },
+                    "template": "git<white>:</>{{ .HEAD }} ",
+                    "foreground": "magenta",
+                    "type": "git",
+                    "style": "plain"
+                },
+                {
+                    "properties": {
+                        "cache_duration": "none",
+                        "command": "test -f '/run/.toolboxenv' && grep -oP '(?<=name=\")[^\";]+' /run/.containerenv",
+                        "interpret": false,
+                        "shell": "bash"
+                    },
+                    "template": "container<white>:</>{{ .Output }} ",
+                    "foreground": "red",
+                    "type": "command",
+                    "style": "plain"
+                },
+                {
+                    "properties": {
+                        "cache_duration": "none",
+                        "command": "test -n $IN_NIX_SHELL && echo $IN_NIX_SHELL",
+                        "interpret": false,
+                        "shell": "bash"
+                    },
+                    "template": "nix<white>:</>{{ .Output }} ",
+                    "foreground": "red",
+                    "type": "command",
+                    "style": "plain"
+                },
+                {
+                    "properties": {
+                        "cache_duration": "none",
+                        "display_mode": "environment",
+                        "fetch_virtual_env": true
+                    },
+                    "template": "python<white>:</>{{ .Full }} ",
+                    "foreground": "cyan",
+                    "type": "python",
+                    "style": "plain"
+                },
+                {
+                    "properties": {
+                        "cache_duration": "none",
+                        "display_mode": "context"
+                    },
+                    "template": "go<white>:</>{{ .Full }} ",
+                    "foreground": "cyan",
+                    "type": "go",
+                    "style": "plain"
+                },
+                {
+                    "properties": {
+                        "cache_duration": "none",
+                        "parse_kubeconfig": true
+                    },
+                    "template": "k8s<white>:</>{{ .Context }}{{if .Namespace }}<white>:</>{{ .Namespace }}{{ else }}<white>:</>default{{ end }} ",
+                    "foreground": "yellow",
+                    "type": "kubectl",
+                    "style": "plain"
+                },
+                {
+                    "properties": {
+                        "source": "first_match"
+                    },
+                    "template": "az<white>:</>{{ .EnvironmentName }} ",
+                    "foreground": "yellow",
+                    "type": "az",
+                    "style": "plain"
+                }
+            ],
+            "newline": true
+        },
+        {
+            "type": "prompt",
+            "alignment": "left",
+            "segments": [
+                {
+                    "properties": {
+                        "always_enabled": true,
+                        "cache_duration": "none",
+                        "status_template": "{{ if eq .Code 0 }}<green>󰅂</>{{ else if eq .Code 130 }}<green>󰅂</>{{ else }}<red>󰅂</>{{ end }}"
+                    },
+                    "template": "{{ .String }} ",
+                    "type": "status",
+                    "style": "plain"
+                },
+                {
+                    "properties": {
+                        "cache_duration": "none",
+                        "folder_separator_icon": " <white></> ",
+                        "home_icon": "home",
+                        "style": "agnoster_full"
+                    },
+                    "template": "{{ .Path }} ",
+                    "foreground": "blue",
+                    "type": "path",
+                    "style": "plain"
+                }
+            ],
+            "newline": true
+        }
+    ],
+    "version": 3
+}

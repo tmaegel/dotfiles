@@ -1,0 +1,6 @@
+[General]
+column = 40
+editor = "nvim"
+selectcmd = "fzf"
+snippetfile = "~/.config/pet/snippet.toml"
+sortby = "-recency -description"

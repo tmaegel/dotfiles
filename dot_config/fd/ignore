@@ -1,0 +1,13 @@
+.coverage
+.dart_tool
+.devenv
+.direnv
+.flutter
+.git
+.mypy_cache
+.pytest_cache
+.terraform
+.venv
+__pycache__
+node_modules
+venv

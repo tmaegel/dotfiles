@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+export FZF_DEFAULT_COMMAND="fd --hidden"
+export FZF_ALT_C_COMMAND="fd --hidden --type d"
+export FZF_CTRL_T_COMMAND="fd --hidden --type f"
+export FZF_CTRL_R_OPTS="--sort --exact"
+export FZF_DEFAULT_OPTS="\
+  --reverse \
+  --info=inline-right \
+  --no-mouse \
+  --no-scrollbar \
+  --no-separator \
+  --no-bold \
+  --border=horizontal \
+  --margin=0,0,0,0 \
+  --padding=0,0,0,0 \
+  --height=50% \
+  --min-height=20 \
+  --prompt=' ' \
+  --pointer='' \
+  --marker='' \
+  --preview-window='right,50%,border-left' \
+  --bind shift-up:preview-up,shift-down:preview-down,pgup:preview-page-up,pgdn:preview-page-down \
+  --color bg+:-1,border:8,fg:-1,fg+:white,gutter:-1,hl:red,marker:blue,pointer:green,spinner:blue"
+
+eval "$(fzf --bash)"

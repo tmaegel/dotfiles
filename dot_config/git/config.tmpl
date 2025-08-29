@@ -1,0 +1,84 @@
+[alias]
+	a = "add"
+	aliases = "!git config --list | grep alias"
+	ap = "add --patch"
+	b = "branch"
+	ba = "branch --all"
+	bd = "!git branch -D \"$(git branch --format=\"%(refname:short)\" | fzf)\""
+	c = "!cz commit"
+	ca = "commit --amend"
+	cb = "checkout -b"
+	co = "!git checkout \"$(git branch --format=\"%(refname:short)\" | fzf)\""
+	d = "-c delta.side-by-side=false diff"
+	ds = "-c delta.side-by-side=true diff"
+	f = "fetch --all --prune --tags"
+	fv = "fetch --all --prune --tags --verbose"
+	l = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit"
+	pl = "!git pull \"$(git remote | fzf)\" \"$(git branch --format=\"%(refname:short)\" | fzf)\""
+	ps = "!git push \"$(git remote | fzf)\" \"$(git branch --format=\"%(refname:short)\" | fzf)\""
+	root = "rev-parse --show-toplevel"
+	s = "status --short"
+	st = "stash"
+	std = "stash drop"
+	stpo = "stash pop"
+	stps = "stash push"
+	w = "whatchanged"
+
+[blame]
+	pager = "delta"
+
+[core]
+	editor = "nvim"
+	pager = "delta"
+
+[delta]
+	dark = true
+	file-added-label = "[+]"
+	file-copied-label = "[copied]"
+	file-decoration-style = "#5C6370 ul ol"
+	file-modified-label = "[~]"
+	file-removed-label = "[-]"
+	file-renamed-label = "[renamed]"
+	file-style = "magenta"
+	hunk-header-style = "omit"
+	line-numbers = false
+	line-numbers-left-format = ""
+	line-numbers-left-style = "black"
+	line-numbers-minus-style = "white"
+	line-numbers-plus-style = "white"
+	line-numbers-right-format = ""
+	line-numbers-right-style = "black"
+	line-numbers-zero-style = "#42464e"
+	minus-emph-style = "syntax bold #643D40"
+	minus-style = "syntax #362B31"
+	navigate = true
+	plus-emph-style = "syntax bold #395844"
+	plus-style = "syntax #273732"
+	syntax-theme = "TwoDark"
+	zero-style = "syntax normal"
+
+[diff]
+	algorithm = "minimal"
+	colorMoved = "default"
+	tool = "nvimdiff"
+
+[difftool]
+	prompt = false
+
+[init]
+	defaultBranch = "main"
+
+[interactive]
+	diffFilter = "delta --color-only"
+
+[merge]
+	conflictstyle = "diff3"
+	tool = "nvimdiff"
+
+[mergetool]
+	keepBackup = false
+	prompt = false
+
+[user]
+	email = "{{ .chezmoi.email }}"
+	name = "{{ .chezmoi.name }}"

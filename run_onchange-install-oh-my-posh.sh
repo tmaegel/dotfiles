@@ -6,10 +6,10 @@
 #              last command to exit with a non-zero status.
 set -eo pipefail
 
-VERSION="v26.19.2"
+VERSION="26.19.2"
 
 wget --quiet \
-    "https://github.com/JanDeDobbeleer/oh-my-posh/releases/download/${VERSION}/posh-linux-amd64" \
+    "https://github.com/JanDeDobbeleer/oh-my-posh/releases/download/v${VERSION}/posh-linux-amd64" \
     -O ~/.local/bin/oh-my-posh.new
 cp ~/.local/bin/oh-my-posh.new ~/.local/bin/oh-my-posh
 chmod 544 ~/.local/bin/oh-my-posh

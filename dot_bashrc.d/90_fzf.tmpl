@@ -22,4 +22,9 @@ export FZF_DEFAULT_OPTS="\
   --bind shift-up:preview-up,shift-down:preview-down,pgup:preview-page-up,pgdn:preview-page-down \
   --color bg+:-1,border:8,fg:-1,fg+:white,gutter:-1,hl:red,marker:blue,pointer:green,spinner:blue"
 
+{{ if eq .chezmoi.osRelease.id "ubuntu" -}}
+# @todo: Obsolete with fzf 0.48.0 or later
+source ~/.local/share/fzf/key-bindings.bash
+{{ else -}}
 eval "$(fzf --bash)"
+{{ end -}}

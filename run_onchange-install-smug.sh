@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+# -u: Treat unset variables as an error when substituting.
+# -e: Exit immediately if a command exits with a non-zero status.
+# -o pipefail: the return value of a pipeline is the status of the
+#              last command to exit with a non-zero status.
+set -eo pipefail
+
+VERSION="0.3.7"
+
+{{ if eq .chezmoi.osRelease.id "ubuntu" -}}
+wget --quiet \
+    "https://github.com/ivaaaan/smug/releases/download/v${VERSION}/smug_${VERSION}_linux_amd64.deb" \
+    -O /tmp/smug.deb
+sudo dpkg -i /tmp/smug.deb
+{{ else if eq .chezmoi.osRelease.id "fedora" -}}
+wget --quiet \
+    "https://github.com/ivaaaan/smug/releases/download/v${VERSION}/smug_${VERSION}_linux_amd64.rpm" \
+    -O /tmp/smug.rpm
+sudo yum install -y /tmp/smug.rpm1
+{{ end -}}

@@ -10,7 +10,7 @@ VERSION="2.65.0"
 
 {{ if eq .chezmoi.osRelease.id "ubuntu" -}}
 wget --quiet \
-    "https://github.com/twpayne/chezmoi/releases/download/v${VERSION}/chezmoi_${VERSIOn}_linux_amd64.deb" \
+    "https://github.com/twpayne/chezmoi/releases/download/v${VERSION}/chezmoi_${VERSION}_linux_amd64.deb" \
     -O /tmp/chezmoi.deb
 sudo dpkg -i /tmp/chezmoi.deb
 {{ else if eq .chezmoi.osRelease.id "fedora" -}}

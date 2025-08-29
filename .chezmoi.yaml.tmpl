@@ -1,6 +1,6 @@
-{{ $firstname := promptStringOnce . "firstname" "What is your firstname?" -}}
-{{ $lastname := promptStringOnce . "lastname" "What is your lastname?" -}}
-{{ $email := promptStringOnce . "email" "What is your email address?" -}}
+{{ $firstname := promptStringOnce . "firstname" "What is your firstname" -}}
+{{ $lastname := promptStringOnce . "lastname" "What is your lastname" -}}
+{{ $email := promptStringOnce . "email" "What is your email address" -}}
 
 data:
     name: "{{ $firstname }} {{ $lastname }}"

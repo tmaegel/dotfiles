@@ -8,9 +8,9 @@
 set -eo pipefail
 
 {{ if eq .chezmoi.osRelease.id "ubuntu" -}}
-apt install -y {{ .packages.ubuntu | join " " }}
+sudo apt install -y {{ .packages.ubuntu | join " " }}
 {{ else if eq .chezmoi.osRelease.id "fedora" -}}
-dnf install {{ .packages.fedora | join " " }}
+sudo dnf install {{ .packages.fedora | join " " }}
 {{ end -}}
 
 {{ end -}}

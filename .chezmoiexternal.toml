@@ -1,8 +1,8 @@
-[".local/bin"]
-  type = "archive"
-  url = "https://github.com/neovim/neovim/releases/latest/download/nvim-{{ .chezmoi.os }}-x86_64.tar.gz"
+[".local/bin/nvim"]
+  type = "file"
+  url = "https://github.com/neovim/neovim/releases/latest/download/nvim-{{ .chezmoi.os }}-x86_64.appimage"
   refreshPeriod = "168h"
-  exact = true
+  executable = true
 [".config/nvim"]
   type = "git-repo"
   url = "https://github.com/tmaegel/nvim_config.git"

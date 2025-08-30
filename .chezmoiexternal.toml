@@ -1,8 +1,13 @@
-[".tmux/plugins/tpm"]
-  type = "git-repo"
-  url = "https://github.com/tmux-plugins/tpm"
+[".local/bin"]
+  type = "archive"
+  url = "https://github.com/neovim/neovim/releases/latest/download/nvim-{{ .chezmoi.os }}-x86_64.tar.gz"
   refreshPeriod = "168h"
+  exact = true
 [".config/nvim"]
   type = "git-repo"
   url = "https://github.com/tmaegel/nvim_config.git"
   refreshPeriod = "24h"
+[".tmux/plugins/tpm"]
+  type = "git-repo"
+  url = "https://github.com/tmux-plugins/tpm"
+  refreshPeriod = "168h"

@@ -6,10 +6,12 @@ packages:
     - direnv
     - fd-find
     - fzf
+    - gcc
     - git
     - git-delta
     - htop
     - jq
+    - libfuse-dev
     - net-tools
     - pciutils
     - tldr
@@ -26,6 +28,7 @@ packages:
     - direnv
     - fd-find
     - fzf
+    - gcc
     - git
     - git-delta
     - gnupg2

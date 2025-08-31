@@ -18,8 +18,8 @@
   type = "git-repo"
   url = "https://github.com/tmux-plugins/tpm"
   refreshPeriod = "168h"
-[".local/bin"]
-  type = "archive"
+[".local/bin/nap"]
+  type = "archive-file"
   url = "https://github.com/maaslalani/nap/releases/download/v0.1.1/nap_0.1.1_{{ .chezmoi.os }}_amd64.tar.gz"
   refreshPeriod = 0
   include = ["nap"]
@@ -31,8 +31,8 @@
   refreshPeriod = 0
   executable = true
   private = true
-[".local/bin"]
-  type = "archive"
+[".local/bin/kubecolor"]
+  type = "archive-file"
   url = "https://github.com/kubecolor/kubecolor/releases/download/v0.5.1/kubecolor_0.5.1_{{ .chezmoi.os }}_amd64.tar.gz"
   refreshPeriod = 0
   include = ["kubecolor"]

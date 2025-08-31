@@ -7,7 +7,6 @@
     djhtml
     djlint
     dockerfile-language-server-nodejs
-    fd
     golangci-lint
     golines
     gopls
@@ -24,7 +23,6 @@
     python311Packages.flake8
     python311Packages.isort
     python311Packages.mypy
-    ripgrep
     shellcheck
     shfmt
     stylua

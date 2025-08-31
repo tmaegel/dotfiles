@@ -22,7 +22,7 @@
   type = "archive-file"
   url = "https://github.com/maaslalani/nap/releases/download/v0.1.1/nap_0.1.1_{{ .chezmoi.os }}_amd64.tar.gz"
   refreshPeriod = 0
-  include = ["nap"]
+  path = "nap"
   executable = true
   private = true
 [".local/bin/kubectl"]
@@ -35,6 +35,6 @@
   type = "archive-file"
   url = "https://github.com/kubecolor/kubecolor/releases/download/v0.5.1/kubecolor_0.5.1_{{ .chezmoi.os }}_amd64.tar.gz"
   refreshPeriod = 0
-  include = ["kubecolor"]
+  path = "kubecolor"
   executable = true
   private = true

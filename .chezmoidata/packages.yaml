@@ -12,6 +12,7 @@ packages:
     - htop
     - jq
     - libfuse-dev
+    - libnotify-bin
     - net-tools
     - pass
     - pass-otp
@@ -38,6 +39,7 @@ packages:
     - gnupg2
     - htop
     - jq
+    - libnotify
     - net-tools
     - netcat
     - oathtool

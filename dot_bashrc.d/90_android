@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 if [[ -d "/opt/flutter/bin" ]]; then
   if ! [[ "$PATH" =~ "/opt/flutter/bin" ]]; then
     PATH="/opt/flutter/bin:${PATH}"

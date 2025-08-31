@@ -18,3 +18,10 @@
   type = "git-repo"
   url = "https://github.com/tmux-plugins/tpm"
   refreshPeriod = "168h"
+[".local/bin/nap"]
+  type = "archive"
+  url = "https://github.com/maaslalani/nap/releases/download/v0.1.1/nap_0.1.1_{{ .chezmoi.os }}_amd64.tar.gz"
+  refreshPeriod = 0
+  include = ["nap"]
+  executable = true
+  private = true

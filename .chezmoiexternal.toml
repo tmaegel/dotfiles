@@ -27,7 +27,7 @@
   private = true
 [".local/bin/kubectl"]
   type = "file"
-  url = "https://dl.k8s.io/release/v1.34.0/bin/linux/amd64/kubectl"
+  url = "https://dl.k8s.io/release/v1.34.0/bin/{{ .chezmoi.os }}/amd64/kubectl"
   refreshPeriod = 0
   executable = true
   private = true

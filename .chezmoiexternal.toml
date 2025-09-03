@@ -38,3 +38,10 @@
   path = "kubecolor"
   executable = true
   private = true
+[".local/bin/k9s"]
+  type = "archive-file"
+  url = "https://github.com/derailed/k9s/releases/latest/download/k9s_{{ .chezmoi.os }}_amd64.tar.gz"
+  refreshPeriod = "168h"
+  path = "k9s"
+  executable = true
+  private = true

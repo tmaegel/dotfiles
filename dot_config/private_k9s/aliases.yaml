@@ -1,0 +1,13 @@
+aliases:
+  pod: pods
+  dp: deployments
+  cm: configmaps
+  sec: v1/secrets
+  svc: services
+  sts: statefulsets
+  job: jobs
+  cr: clusterroles
+  crb: clusterrolebindings
+  ro: roles
+  rb: rolebindings
+  np: networkpolicies

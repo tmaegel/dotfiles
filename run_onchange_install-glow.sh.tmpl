@@ -16,7 +16,7 @@ if ! command -v glow > /dev/null; then
   sudo dpkg -i /tmp/glow.deb
   {{ else if eq .chezmoi.osRelease.id "fedora" -}}
   wget --quiet \
-      "https://github.com/charmbracelet/glow/releases/download/v${VERSION}/glow-${VERSION}.x86_64.rpm" \
+      "https://github.com/charmbracelet/glow/releases/download/v${VERSION}/glow-${VERSION}-1.x86_64.rpm" \
       -O /tmp/glow.rpm
   sudo yum install -y /tmp/glow.rpm
   {{ end -}}

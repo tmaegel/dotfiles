@@ -8,14 +8,16 @@ set -eo pipefail
 
 VERSION="1.0.1"
 
-{{ if eq .chezmoi.osRelease.id "ubuntu" -}}
-wget --quiet \
-    "https://github.com/knqyf263/pet/releases/download/v${VERSION}/pet_${VERSION}_linux_amd64.deb" \
-    -O /tmp/pet.deb
-sudo dpkg -i /tmp/pet.deb
-{{ else if eq .chezmoi.osRelease.id "fedora" -}}
-wget --quiet \
-    "https://github.com/knqyf263/pet/releases/download/v${VERSION}/pet_${VERSION}_linux_amd64.rpm" \
-    -O /tmp/pet.rpm
-sudo yum install -y /tmp/pet.rpm
-{{ end -}}
+if ! command -v pet > /dev/null; then
+  {{ if eq .chezmoi.osRelease.id "ubuntu" -}}
+  wget --quiet \
+      "https://github.com/knqyf263/pet/releases/download/v${VERSION}/pet_${VERSION}_linux_amd64.deb" \
+      -O /tmp/pet.deb
+  sudo dpkg -i /tmp/pet.deb
+  {{ else if eq .chezmoi.osRelease.id "fedora" -}}
+  wget --quiet \
+      "https://github.com/knqyf263/pet/releases/download/v${VERSION}/pet_${VERSION}_linux_amd64.rpm" \
+      -O /tmp/pet.rpm
+  sudo yum install -y /tmp/pet.rpm
+  {{ end -}}
+fi

@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 export PAGER="less"
-alias la="ls -lah --group-directories-first"
-alias ll="ls -lh --group-directories-first"
 alias ds="du -d 1 -h . | sort -h -r"
 alias extip="dig +short myip.opendns.com @resolver4.opendns.com"
+

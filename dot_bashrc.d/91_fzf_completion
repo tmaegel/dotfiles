@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+source ~/.local/share/fzf/fzf-bash-completion.sh
+bind -x '"\t": fzf_bash_completion'
+FZF_TAB_COMPLETION_PROMPT=' '
+# Reduce flickering
+_fzf_bash_completion_loading_msg() { echo "${PS1@P}${READLINE_LINE}" | tail -n1; }

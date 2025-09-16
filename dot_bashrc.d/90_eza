@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 alias ls="eza --icons=auto --group-directories-first"
-alias lt="eza --tree"
-alias la="eza -la"
-alias lat="eza -la --tree"
-alias ll="eza -l"
-alias llt="eza -l --tree"
+alias lt="ls --tree"
+alias la="ls -la"
+alias lat="ls -la --tree"
+alias ll="ls -l"
+alias llt="ls -l --tree"

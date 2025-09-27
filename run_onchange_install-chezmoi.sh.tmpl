@@ -8,16 +8,14 @@ set -eo pipefail
 
 VERSION="2.65.0"
 
-if ! command -v chezmoi > /dev/null; then
-  {{ if eq .chezmoi.osRelease.id "ubuntu" -}}
-  wget --quiet \
-      "https://github.com/twpayne/chezmoi/releases/download/v${VERSION}/chezmoi_${VERSION}_linux_amd64.deb" \
-      -O /tmp/chezmoi.deb
-  sudo dpkg -i /tmp/chezmoi.deb
-  {{ else if eq .chezmoi.osRelease.id "fedora" -}}
-  wget --quiet \
-      "https://github.com/twpayne/chezmoi/releases/download/v${VERSION}/chezmoi-${VERSION}-x86_64.rpm" \
-      -O /tmp/chezmoi.rpm
-  sudo yum install -y /tmp/chezmoi.rpm
-  {{ end -}}
-fi
+{{ if eq .chezmoi.osRelease.id "ubuntu" -}}
+wget --quiet \
+    "https://github.com/twpayne/chezmoi/releases/download/v${VERSION}/chezmoi_${VERSION}_linux_amd64.deb" \
+    -O /tmp/chezmoi.deb
+sudo dpkg -i /tmp/chezmoi.deb
+{{ else if eq .chezmoi.osRelease.id "fedora" -}}
+wget --quiet \
+    "https://github.com/twpayne/chezmoi/releases/download/v${VERSION}/chezmoi-${VERSION}-x86_64.rpm" \
+    -O /tmp/chezmoi.rpm
+sudo yum install -y /tmp/chezmoi.rpm
+{{ end -}}

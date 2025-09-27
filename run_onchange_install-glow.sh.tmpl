@@ -8,16 +8,14 @@ set -eo pipefail
 
 VERSION="2.1.1"
 
-if ! command -v glow > /dev/null; then
-  {{ if eq .chezmoi.osRelease.id "ubuntu" -}}
-  wget --quiet \
-      "https://github.com/charmbracelet/glow/releases/download/v${VERSION}/glow_${VERSION}_amd64.deb" \
-      -O /tmp/glow.deb
-  sudo dpkg -i /tmp/glow.deb
-  {{ else if eq .chezmoi.osRelease.id "fedora" -}}
-  wget --quiet \
-      "https://github.com/charmbracelet/glow/releases/download/v${VERSION}/glow-${VERSION}-1.x86_64.rpm" \
-      -O /tmp/glow.rpm
-  sudo yum install -y /tmp/glow.rpm
-  {{ end -}}
-fi
+{{ if eq .chezmoi.osRelease.id "ubuntu" -}}
+wget --quiet \
+    "https://github.com/charmbracelet/glow/releases/download/v${VERSION}/glow_${VERSION}_amd64.deb" \
+    -O /tmp/glow.deb
+sudo dpkg -i /tmp/glow.deb
+{{ else if eq .chezmoi.osRelease.id "fedora" -}}
+wget --quiet \
+    "https://github.com/charmbracelet/glow/releases/download/v${VERSION}/glow-${VERSION}-1.x86_64.rpm" \
+    -O /tmp/glow.rpm
+sudo yum install -y /tmp/glow.rpm
+{{ end -}}

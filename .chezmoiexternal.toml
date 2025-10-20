@@ -59,3 +59,10 @@
   refreshPeriod = "168h"
   executable = false
   private = true
+[".local/bin/hcloud-upload-image"]
+  type = "archive-file"
+  url = "https://github.com/apricote/hcloud-upload-image/releases/latest/download/hcloud-upload-image_{{ .chezmoi.os }}_x86_64.tar.gz"
+  refreshPeriod = "168h"
+  path = "hcloud-upload-image"
+  executable = true
+  private = true

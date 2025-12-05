@@ -53,6 +53,12 @@
   stripComponents = 1
   executable = true
   private = true
+[".local/bin/cosign"]
+  type = "file"
+  url = "https://github.com/sigstore/cosign/releases/latest/download/cosign-{{ .chezmoi.os }}-amd64"
+  refreshPeriod = "168h"
+  executable = true
+  private = true
 [".local/share/fzf/fzf-bash-completion.sh"]
   type = "file"
   url = "https://raw.githubusercontent.com/lincheney/fzf-tab-completion/refs/heads/master/bash/fzf-bash-completion.sh"

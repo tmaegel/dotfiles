@@ -36,27 +36,15 @@
                     "style": "plain"
                 },
                 {
-                    "properties": {
-                        "cache_duration": "none",
-                        "command": "test -f '/run/.toolboxenv' && grep -oP '(?<=name=\")[^\";]+' /run/.containerenv",
-                        "interpret": false,
-                        "shell": "bash"
-                    },
-                    "template": "container<white>:</>{{ .Output }} ",
+                    "template": "{{ if .Env.CONTAINER_ENV }}container<white>:</>{{ .Env.CONTAINER_ENV }} {{ end }}",
                     "foreground": "red",
-                    "type": "command",
+                    "type": "text",
                     "style": "plain"
                 },
                 {
-                    "properties": {
-                        "cache_duration": "none",
-                        "command": "test -n $IN_NIX_SHELL && echo $IN_NIX_SHELL",
-                        "interpret": false,
-                        "shell": "bash"
-                    },
-                    "template": "nix<white>:</>{{ .Output }} ",
+                    "template": "{{ if .Env.IN_NIX_SHELL }}nix<white>:</>{{ .Env.IN_NIX_SHELL }} {{ end }}",
                     "foreground": "red",
-                    "type": "command",
+                    "type": "text",
                     "style": "plain"
                 },
                 {

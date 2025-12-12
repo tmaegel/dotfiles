@@ -1,2 +1,5 @@
 #!/usr/bin/env bash
 eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/config.json)"
+
+export CONTAINER_ENV=$(test -f '/run/.toolboxenv' && grep -oP '(?<=name=\")[^\";]+' /run/.containerenv)
+

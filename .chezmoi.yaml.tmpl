@@ -1,9 +1,13 @@
 {{ $name := promptStringOnce . "fullname" "What is your fullname" -}}
 {{ $email := promptStringOnce . "email" "What is your email address" -}}
+{{ $personal := promptBoolOnce . "personal" "Is this your personal machine" }}
+{{ $hasGUI := promptBoolOnce . "hasGUI" "Does this machine have a GUI" }}
 
 data:
     name: {{ $name | quote }}
     email: {{ $email | quote }}
+    personal: {{ $personal | quote }}
+    hasGUI: {{ $hasGUI | quote }}
 
 diff:
     exclude:

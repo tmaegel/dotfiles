@@ -1,0 +1,64 @@
+{{ if .personal -}}
+#!/usr/bin/env bash
+
+# -u: Treat unset variables as an error when substituting.
+# -e: Exit immediately if a command exits with a non-zero status.
+# -o pipefail: the return value of a pipeline is the status of
+#              the last command to exit with a non-zero status.
+set -ueo pipefail
+
+# @todo: --password-file=~/.rsync_pass
+
+RSYNC_SERVER="homenas.local"
+RSYNC_USER="toni"
+RSYNC_MODULE="rsync-data-toni"
+RSYNC_PASS_FILE="${HOME}/.rsync_pass"
+
+RSYNC_BACKUP_DIRS=("Anwendungen" "Bilder" "Dokumente" "Downloads" "Projekte" "System" "Videos")
+
+RSYNC_EXCLUDE_FILE="$(mktemp)"
+cat << EOF >> "${RSYNC_EXCLUDE_FILE}"
+*.img
+*.iso
+.android
+.coverage
+.dart_tool
+.devenv
+.direnv
+.flutter
+.mypy_cache
+.pytest_cache
+.terraform
+.terraform.lock.*
+.tox/
+.venv
+__pycache__
+android-studio
+build
+ctags
+ctags.lock
+ctags.temp
+firefox_downloads
+node_modules
+nosync
+venv
+virtualbox
+EOF
+
+# shellcheck disable=SC2068
+for DIR in ${RSYNC_BACKUP_DIRS[@]}; do
+  rsync -ahv \
+    --password-file="${RSYNC_PASS_FILE}" \
+    --delete \
+    --backup \
+    --backup-dir=trash \
+    --exclude-from="${RSYNC_EXCLUDE_FILE}" \
+    "${HOME}/${DIR}" \
+    "rsync://${RSYNC_USER}@${RSYNC_SERVER}/${RSYNC_MODULE}"
+done
+
+rm -f "${RSYNC_EXCLUDE_FILE}"
+
+# @todo:
+# Dead-Man-Switch
+{{ end -}}

@@ -1,0 +1,11 @@
+{{ if .personal -}}
+[Unit]
+Description=Sync user data to homenas
+
+[Timer]
+OnBootSec=15min
+OnUnitActiveSec=1d
+
+[Install]
+WantedBy=timers.target
+{{ end -}}

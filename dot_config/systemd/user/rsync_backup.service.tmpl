@@ -1,11 +1,12 @@
 {{ if .personal -}}
 [Unit]
-Description=Sync user data to homenas
-Requires=network-online.target
+Description=Sync data with homenas
 
 [Service]
 Type=oneshot
+ExecStartPre=-curl -sS -m 10 --retry 5 https://hc-ping.com/941b2e09-9885-4be3-8ae1-3b450781f8ae/start
 ExecStart=%h/.local/bin/rsync_backup.sh
+ExecStopPost=curl -sS -m 10 --retry 5 https://hc-ping.com/941b2e09-9885-4be3-8ae1-3b450781f8ae/${EXIT_STATUS}
 
 [Install]
 WantedBy=multi-user.target

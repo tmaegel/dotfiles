@@ -43,7 +43,7 @@ venv
 virtualbox
 EOF
 
-notify-send -a "rsync-backup" "Start synchronization with homenas"
+notify-send -a "rsync-backup" "Start synchronizing data with homenas."
 
 # shellcheck disable=SC2068
 for DIR in ${RSYNC_BACKUP_DIRS[@]}; do
@@ -62,5 +62,5 @@ rm -f "${RSYNC_EXCLUDE_FILE}"
 # @todo:
 # Dead-Man-Switch
 
-notify-send -a "rsync-backup" "Data was synchronized to homenas"
+notify-send -a "rsync-backup" "Data was synchronized with homenas"
 {{ end -}}

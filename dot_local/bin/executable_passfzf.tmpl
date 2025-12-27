@@ -1,0 +1,28 @@
+{{ if .personal -}}
+#!/usr/bin/env bash
+
+shopt -s nullglob globstar
+
+prefix=${PASSWORD_STORE_DIR-~/.password-store}
+password_files=("${prefix}"/**/*.gpg)
+password_files=("${password_files[@]#"${prefix}"/}")
+password_files=("${password_files[@]%.gpg}")
+
+# Passed for example 'rofi -dmenu' as parameter
+password=$(printf '%s\n' "${password_files[@]}" | fzf)
+
+[[ -n ${password} ]] || exit
+
+if [[ ${password} =~ 2fa$ ]]; then
+  secret=$(pass otp "${password}" 2> /dev/null)
+else
+  secret=$(pass show "${password}" 2> /dev/null)
+fi
+
+if [[ $? -eq 0 ]]; then
+  wl-copy -o "${secret}"
+  notify-send -a "passfzf" -e -t 5000 "Password copied"
+else
+  notify-send -a "passfzf" -e -t 5000 "Wrong password"
+fi
+{{ end -}}

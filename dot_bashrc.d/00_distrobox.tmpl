@@ -1,0 +1,11 @@
+{{ if .personal -}}
+#!/usr/bin/env bash
+alias dbox="distrobox"
+
+if [[ -n ${DISTROBOX_ENTER_PATH} ]]; then
+  export LC_ALL=de_DE.UTF-8
+  export LANGUAGE=de_DE.UTF-8
+  export LANG=de_DE.UTF-8
+  export LC_CTYPE=de_DE.UTF-8
+fi
+{{ end -}}

@@ -7,7 +7,7 @@
 #              the last command to exit with a non-zero status.
 set -ueo pipefail
 
-RSYNC_SERVER="homenas.local"
+RSYNC_SERVER="homenas"
 RSYNC_USER="toni"
 RSYNC_MODULE="rsync-data-toni"
 RSYNC_PASS_FILE="${HOME}/.rsync_pass"
@@ -43,7 +43,17 @@ venv
 virtualbox
 EOF
 
-notify-send -a "rsync-backup" "Start synchronizing data with homenas."
+cleanup() {
+  status=$?
+  if [ "${status}" -ne 0 ]; then
+    notify-send -a "rsync-backup" "Something went wrong during data synchronization"
+  fi
+  rm -f "${RSYNC_EXCLUDE_FILE}"
+}
+
+trap cleanup EXIT
+
+notify-send -a "rsync-backup" "Start synchronizing data with homenas"
 
 # shellcheck disable=SC2068
 for DIR in ${RSYNC_BACKUP_DIRS[@]}; do
@@ -58,9 +68,6 @@ for DIR in ${RSYNC_BACKUP_DIRS[@]}; do
 done
 
 rm -f "${RSYNC_EXCLUDE_FILE}"
-
-# @todo:
-# Dead-Man-Switch
 
 notify-send -a "rsync-backup" "Data was synchronized with homenas"
 {{ end -}}

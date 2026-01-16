@@ -1,0 +1,136 @@
+{
+  "window.customTitleBarVisibility": "auto",
+  "window.menuBarVisibility": "toggle",
+  "window.titleBarStyle": "custom",
+  "workbench.colorTheme": "One Dark Pro Darker",
+  "workbench.colorCustomizations": {
+    "tab.activeBorder": "#23272E",
+    "tab.inactiveBackground": "#1E2227",
+    "tab.border": "#1E2227",
+    "sideBar.background": "#1E2227",
+    "activityBar.background": "#23272E",
+    "activityBar.activeBackground": "#23272E",
+    "activityBar.activeFocusBorder": "#23272E",
+    "activityBar.activeBorder": "#23272E",
+    "activityBar.border": "#1E2227",
+    "statusBar.background": "#1E2227",
+    "panelTitle.activeBorder": "#23272e",
+    "editorGroup.border": "#1E2227",
+    "panel.border": "#1E2227",
+    "terminalOverviewRuler.border": "#23272e"
+  },
+  "workbench.editor.editorActionsLocation": "titleBar",
+  "workbench.editor.enablePreview": false,
+  "workbench.activityBar.location": "top",
+  "workbench.startupEditor": "none",
+  "workbench.tree.indent": 14,
+  "editor.minimap.enabled": false,
+  // we try to make semantic highlighting look good
+  "editor.guides.indentation": true,
+  "editor.overviewRulerBorder": false,
+  "editor.renderFinalNewline": "on",
+  "editor.rulers": [],
+  "editor.scrollbar.horizontalScrollbarSize": 8,
+  "editor.scrollbar.verticalScrollbarSize": 8,
+  "editor.semanticHighlighting.enabled": true,
+  "terminal.integrated.fontFamily": "\"Hack Nerd Font\", monospace",
+  "terminal.integrated.tabs.enabled": true,
+  "terminal.integrated.allowChords": false,
+  // prevent VSCode from modifying the terminal colors
+  "terminal.integrated.minimumContrastRatio": 1,
+  "explorer.autoReveal": false,
+  "breadcrumbs.symbolPath": "off",
+  "breadcrumbs.icons": false,
+  "files.eol": "\n",
+  "files.encoding": "utf8",
+  "files.trimTrailingWhitespace": true,
+  "files.associations": {
+    ".yamlfmt": "yaml"
+  },
+  "search.exclude": {
+    "**/.venv": true,
+    "**/venv": true
+  },
+  "update.mode": "none",
+  "extensions.autoCheckUpdates": true,
+  "[python]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    },
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true
+  },
+  "isort.args": ["--profile", "black"],
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
+    },
+    "editor.selectionHighlight": false,
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": "off"
+  },
+  "[shellscript]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.shellcheck": "explicit"
+    }
+  },
+  "shellcheck.customArgs": ["-o", "all"],
+  "shellcheck.enable": true,
+  "shellcheck.enableQuickFix": true,
+  "shellcheck.exclude": [],
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.formatOnSave": true
+  },
+  "[terraform]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSave": true
+  },
+  "remote.autoForwardPorts": false,
+  "redhat.telemetry.enabled": false,
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "go.toolsManagement.autoUpdate": true,
+  "chat.fontSize": 16,
+  "chat.viewSessions.orientation": "stacked",
+  "github.copilot.nextEditSuggestions.enabled": true
+}

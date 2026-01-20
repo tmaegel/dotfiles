@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+source ~/.local/share/bash-completion/completions/chezmoi/chezmoi-bash-completion.sh

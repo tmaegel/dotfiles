@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ~/.local/share/fzf/fzf-bash-completion.sh
+source ~/.local/share/bash-completion/completions/fzf/fzf-bash-completion.sh
 bind -x '"\t": fzf_bash_completion'
 FZF_TAB_COMPLETION_PROMPT=' '
 # Reduce flickering

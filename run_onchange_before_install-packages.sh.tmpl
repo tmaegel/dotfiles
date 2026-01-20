@@ -1,4 +1,7 @@
-{{ if eq .chezmoi.os "linux" -}}
+{{- $isDistroboxContainer := ne (env "DISTROBOX_ENTER_PATH") "" -}}
+{{- $isDevContainer := or (env "REMOTE_CONTAINERS") (env "CODESPACES") | not | not -}}
+{{- $isWSL := and (eq .chezmoi.os "linux") (contains (lower .chezmoi.kernel.osrelease) "microsoft") -}}
+{{ if or ($isDistroboxContainer) ($isDevContainer) ($isWSL) -}}
 #!/usr/bin/env bash
 
 # -u: Treat unset variables as an error when substituting.
@@ -7,6 +10,7 @@
 #              last command to exit with a non-zero status.
 set -eo pipefail
 
+echo ">>> RUN $(basename "$0")"
 {{ if eq .chezmoi.osRelease.id "ubuntu" -}}
 sudo apt install -y {{ .packages.ubuntu | join " " }}
 {{ else if eq .chezmoi.osRelease.id "fedora" -}}

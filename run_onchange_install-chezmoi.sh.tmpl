@@ -6,6 +6,8 @@
 #              last command to exit with a non-zero status.
 set -eo pipefail
 
+echo ">>> RUN $(basename "$0")"
+
 VERSION="2.65.0"
 
 {{ if eq .chezmoi.osRelease.id "ubuntu" -}}
@@ -19,3 +21,5 @@ wget --quiet \
     -O /tmp/chezmoi.rpm
 sudo yum install -y /tmp/chezmoi.rpm
 {{ end -}}
+
+chezmoi completion bash > ~/.local/share/bash-completion/completions/chezmoi/chezmoi-bash-completion.sh

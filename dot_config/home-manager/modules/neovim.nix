@@ -2,11 +2,10 @@
 {
 
   home.packages = with pkgs; [
-    ansible-language-server
+    # ansible-language-server # ansible-language-server was removed, because it was unmaintained in nixpkgs
     ansible-lint
-    djhtml
-    djlint
     dockerfile-language-server-nodejs
+    gofumpt
     golangci-lint
     golines
     gopls

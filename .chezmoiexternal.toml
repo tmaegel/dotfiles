@@ -4,12 +4,6 @@
   refreshPeriod = "168h"
   executable = true
   private = true
-[".local/bin/nvim"]
-  type = "file"
-  url = "https://github.com/neovim/neovim/releases/latest/download/nvim-{{ .chezmoi.os }}-x86_64.appimage"
-  refreshPeriod = "168h"
-  executable = true
-  private = true
 [".config/nvim"]
   type = "git-repo"
   url = "https://github.com/tmaegel/nvim_config.git"
@@ -18,33 +12,6 @@
   type = "git-repo"
   url = "https://github.com/tmux-plugins/tpm"
   refreshPeriod = "168h"
-[".local/bin/nap"]
-  type = "archive-file"
-  url = "https://github.com/maaslalani/nap/releases/download/v0.1.1/nap_0.1.1_{{ .chezmoi.os }}_amd64.tar.gz"
-  refreshPeriod = 0
-  path = "nap"
-  executable = true
-  private = true
-[".local/bin/kubectl"]
-  type = "file"
-  url = "https://dl.k8s.io/release/v1.34.0/bin/{{ .chezmoi.os }}/amd64/kubectl"
-  refreshPeriod = 0
-  executable = true
-  private = true
-[".local/bin/kubecolor"]
-  type = "archive-file"
-  url = "https://github.com/kubecolor/kubecolor/releases/download/v0.5.1/kubecolor_0.5.1_{{ .chezmoi.os }}_amd64.tar.gz"
-  refreshPeriod = 0
-  path = "kubecolor"
-  executable = true
-  private = true
-[".local/bin/k9s"]
-  type = "archive-file"
-  url = "https://github.com/derailed/k9s/releases/latest/download/k9s_{{ .chezmoi.os }}_amd64.tar.gz"
-  refreshPeriod = "168h"
-  path = "k9s"
-  executable = true
-  private = true
 [".local/bin/eza"]
   type = "archive-file"
   url = "https://github.com/eza-community/eza/releases/latest/download/eza_x86_64-unknown-{{ .chezmoi.os }}-gnu.tar.gz"
@@ -53,22 +20,9 @@
   stripComponents = 1
   executable = true
   private = true
-[".local/bin/cosign"]
-  type = "file"
-  url = "https://github.com/sigstore/cosign/releases/latest/download/cosign-{{ .chezmoi.os }}-amd64"
-  refreshPeriod = "168h"
-  executable = true
-  private = true
-[".local/share/fzf/fzf-bash-completion.sh"]
+[".local/share/bash-completion/completions/fzf/fzf-bash-completion.sh"]
   type = "file"
   url = "https://raw.githubusercontent.com/lincheney/fzf-tab-completion/refs/heads/master/bash/fzf-bash-completion.sh"
   refreshPeriod = "168h"
   executable = false
-  private = true
-[".local/bin/hcloud-upload-image"]
-  type = "archive-file"
-  url = "https://github.com/apricote/hcloud-upload-image/releases/latest/download/hcloud-upload-image_{{ .chezmoi.os }}_x86_64.tar.gz"
-  refreshPeriod = "168h"
-  path = "hcloud-upload-image"
-  executable = true
   private = true

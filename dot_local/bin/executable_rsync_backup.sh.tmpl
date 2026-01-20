@@ -1,4 +1,6 @@
-{{ if .personal -}}
+{{- $isDevContainer := or (env "REMOTE_CONTAINERS") (env "CODESPACES") | not | not -}}
+{{- $isWSL := and (eq .chezmoi.os "linux") (contains (lower .chezmoi.kernel.osrelease) "microsoft") -}}
+{{ if and .personal (not (or ($isDevContainer) ($isWSL))) -}}
 #!/usr/bin/env bash
 
 # -u: Treat unset variables as an error when substituting.

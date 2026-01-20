@@ -1,4 +1,7 @@
-{{ if and (.hasGUI) (eq .chezmoi.os "linux") -}}
+{{- $isDistroboxContainer := ne (env "DISTROBOX_ENTER_PATH") "" -}}
+{{- $isDevContainer := or (env "REMOTE_CONTAINERS") (env "CODESPACES") | not | not -}}
+{{- $isWSL := and (eq .chezmoi.os "linux") (contains (lower .chezmoi.kernel.osrelease) "microsoft") -}}
+{{ if not (or ($isDistroboxContainer) ($isDevContainer) ($isWSL)) -}}
 #!/usr/bin/env bash
 
 # -u: Treat unset variables as an error when substituting.
@@ -6,6 +9,8 @@
 # -o pipefail: the return value of a pipeline is the status of the
 #              last command to exit with a non-zero status.
 set -eo pipefail
+
+echo ">>> RUN $(basename "$0")"
 {{ range .dconf.general }}
 echo "dconf write {{ . }}"
 dconf write {{ . }}

@@ -1,4 +1,6 @@
-{{ if .hasGUI -}}
+{{- $isDevContainer := or (env "REMOTE_CONTAINERS") (env "CODESPACES") | not | not -}}
+{{- $isWSL := and (eq .chezmoi.os "linux") (contains (lower .chezmoi.kernel.osrelease) "microsoft") -}}
+{{ if not (or ($isDevContainer) ($isWSL)) -}}
 [Palette]
 Name=Dark One
 Background=#1e222a

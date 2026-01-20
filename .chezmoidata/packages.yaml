@@ -6,13 +6,14 @@ packages:
     - direnv
     - fd-find
     - fzf
+    - gawk
     - gcc
     - git
     - git-delta
     - htop
     - jq
-    - libfuse-dev
     - libnotify-bin
+    - neovim
     - net-tools
     - pass
     - pass-otp
@@ -31,8 +32,10 @@ packages:
     - bat
     - curl
     - direnv
+    - dnf-plugins-core
     - fd-find
     - fzf
+    - gawk
     - gcc
     - git
     - git-delta
@@ -40,6 +43,7 @@ packages:
     - htop
     - jq
     - libnotify
+    - neovim
     - net-tools
     - netcat
     - oathtool
@@ -50,6 +54,7 @@ packages:
     - restic
     - ripgrep
     - rsync
+    - shasum
     - tldr
     - tmux
     - unzip

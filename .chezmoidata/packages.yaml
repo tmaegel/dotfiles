@@ -29,6 +29,7 @@ packages:
     - zip
     - zoxide
   fedora:
+    - android-tools
     - bash-completion
     - bat
     - curl
@@ -62,6 +63,6 @@ packages:
     - unzip
     - vim
     - wget
-    - wl-copy
+    - wl-clipboard
     - zip
     - zoxide

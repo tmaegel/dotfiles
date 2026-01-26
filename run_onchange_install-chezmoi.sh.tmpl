@@ -1,3 +1,7 @@
+{{- $isDistroboxContainer := ne (env "DISTROBOX_ENTER_PATH") "" -}}
+{{- $isDevContainer := or (env "REMOTE_CONTAINERS") (env "CODESPACES") | not | not -}}
+{{- $isWSL := and (eq .chezmoi.os "linux") (contains (lower .chezmoi.kernel.osrelease) "microsoft") -}}
+{{ if not (or ($isDistroboxContainer) ($isDevContainer) ($isWSL)) -}}
 #!/usr/bin/env bash
 
 # -u: Treat unset variables as an error when substituting.
@@ -8,7 +12,7 @@ set -eo pipefail
 
 echo ">>> RUN $(basename "$0")"
 
-VERSION="2.65.0"
+VERSION="2.69.3"
 
 {{ if eq .chezmoi.osRelease.id "ubuntu" -}}
 wget --quiet \
@@ -23,3 +27,4 @@ sudo yum install -y /tmp/chezmoi.rpm
 {{ end -}}
 
 chezmoi completion bash > ~/.local/share/bash-completion/completions/chezmoi/chezmoi-bash-completion.sh
+{{ end -}}

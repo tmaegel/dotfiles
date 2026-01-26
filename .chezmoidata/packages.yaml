@@ -18,6 +18,7 @@ packages:
     - pass
     - pass-otp
     - pciutils
+    - pinentry-gnome3
     - pre-commit
     - ripgrep
     - tldr
@@ -50,6 +51,7 @@ packages:
     - pass
     - pass-otp
     - pciutils
+    - pinentry-gnome3
     - pre-commit
     - restic
     - ripgrep

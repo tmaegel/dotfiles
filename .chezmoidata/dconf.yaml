@@ -105,14 +105,17 @@ dconf:
     - /org/gnome/shell/disable-user-extensions false
     - /org/gnome/shell/enabled-extensions "['launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'appindicatorsupport@rgcjonas.gmail.com', 'caffeine@patapon.info', 'dash-to-dock@micxgx.gmail.com', 'just-perfection-desktop@just-perfection', 'tiling-assistant@leleat-on-github']"
     - /org/gnome/shell/extensions/dash-to-dock/autohide-in-fullscreen false
+    - /org/gnome/shell/extensions/dash-to-dock/background-color "'rgb(0,0,0)'"
     - /org/gnome/shell/extensions/dash-to-dock/background-opacity 0.6
     - /org/gnome/shell/extensions/dash-to-dock/click-action "'cycle-windows'"
+    - /org/gnome/shell/extensions/dash-to-dock/custom-background-color true
     - /org/gnome/shell/extensions/dash-to-dock/custom-theme-shrink true
     - /org/gnome/shell/extensions/dash-to-dock/customize-alphas true
     - /org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size 48
     - /org/gnome/shell/extensions/dash-to-dock/disable-overview-on-startup false
     - /org/gnome/shell/extensions/dash-to-dock/dock-fixed false
     - /org/gnome/shell/extensions/dash-to-dock/dock-position "'LEFT'"
+    - /org/gnome/shell/extensions/dash-to-dock/extend-height true
     - /org/gnome/shell/extensions/dash-to-dock/height-fraction 0.9
     - /org/gnome/shell/extensions/dash-to-dock/hide-tooltip true
     - /org/gnome/shell/extensions/dash-to-dock/hot-keys false
@@ -130,19 +133,23 @@ dconf:
     - /org/gnome/shell/extensions/dash-to-dock/show-mounts-network false
     - /org/gnome/shell/extensions/dash-to-dock/show-show-apps-button false
     - /org/gnome/shell/extensions/dash-to-dock/show-trash false
+    - /org/gnome/shell/extensions/dash-to-dock/show-windows-preview false
     - /org/gnome/shell/extensions/dash-to-dock/transparency-mode "'DYNAMIC'"
   ubuntu:
     - /org/gnome/shell/disable-user-extensions false
     - /org/gnome/shell/disabled-extensions "['ding@rastersoft.com']"
     - /org/gnome/shell/enabled-extensions "['launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'caffeine@patapon.info', 'just-perfection-desktop@just-perfection']"
     - /org/gnome/shell/extensions/dash-to-dock/autohide-in-fullscreen false
+    - /org/gnome/shell/extensions/dash-to-dock/background-color "'rgb(0,0,0)'"
     - /org/gnome/shell/extensions/dash-to-dock/background-opacity 0.8
     - /org/gnome/shell/extensions/dash-to-dock/click-action "'cycle-windows'"
+    - /org/gnome/shell/extensions/dash-to-dock/custom-background-color true
     - /org/gnome/shell/extensions/dash-to-dock/custom-theme-shrink true
     - /org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size 48
     - /org/gnome/shell/extensions/dash-to-dock/disable-overview-on-startup false
     - /org/gnome/shell/extensions/dash-to-dock/dock-fixed false
     - /org/gnome/shell/extensions/dash-to-dock/dock-position "'LEFT'"
+    - /org/gnome/shell/extensions/dash-to-dock/extend-height true
     - /org/gnome/shell/extensions/dash-to-dock/height-fraction 0.9
     - /org/gnome/shell/extensions/dash-to-dock/hide-tooltip true
     - /org/gnome/shell/extensions/dash-to-dock/hot-keys false
@@ -158,4 +165,5 @@ dconf:
     - /org/gnome/shell/extensions/dash-to-dock/show-mounts-network false
     - /org/gnome/shell/extensions/dash-to-dock/show-show-apps-button false
     - /org/gnome/shell/extensions/dash-to-dock/show-trash false
+    - /org/gnome/shell/extensions/dash-to-dock/show-windows-preview false
     - /org/gnome/shell/extensions/dash-to-dock/transparency-mode "'DEFAULT'"

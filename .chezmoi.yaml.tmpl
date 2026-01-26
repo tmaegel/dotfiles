@@ -1,13 +1,39 @@
-{{ $name := promptStringOnce . "fullname" "What is your fullname" -}}
-{{ $email := promptStringOnce . "email" "What is your email address" -}}
-{{ $personal := promptBoolOnce . "personal" "Is this your personal machine" }}
-{{ $hasGUI := promptBoolOnce . "hasGUI" "Does this machine have a GUI" }}
+{{- /* Checks if running interactively, which is not the case for GitHub Codespaces */ -}}
+{{- $interactive := stdinIsATTY -}}
+
+{{- $name := "Toni Mägel" -}}
+{{- /* If name was previously set, reuses it */ -}}
+{{- if hasKey . "name" -}}
+{{-   $name = .name -}}
+{{- /* Otherwise, if running interactively, prompts for a name */ -}}
+{{- else if $interactive -}}
+{{-   $name = promptString "What is your fullname" $name -}}
+{{- end -}}
+
+{{- $email := "tmaegel@posteo.de" -}}
+{{- if hasKey . "email" -}}
+{{-   $email = .email -}}
+{{- else if $interactive -}}
+{{-   $email = promptString "What is your email address" $email -}}
+{{- end -}}
+
+{{- $personal := false -}}
+{{- if hasKey . "personal" -}}
+{{-   $personal = .personal -}}
+{{- else if $interactive -}}
+{{-   $personal = promptBool "Is this your personal machine" $personal -}}
+{{- end -}}
+
+{{- if $interactive -}}
+{{-   writeToStdout "💡 Tip: you can re-enter your name and email with `chezmoi init --data=false`.\n" -}}
+{{- end -}}
+
+sourceDir: {{ .chezmoi.sourceDir | quote }}
 
 data:
     name: {{ $name | quote }}
     email: {{ $email | quote }}
     personal: {{ $personal | quote }}
-    hasGUI: {{ $hasGUI | quote }}
 
 diff:
     exclude:

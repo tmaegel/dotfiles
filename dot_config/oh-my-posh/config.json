@@ -1,124 +1,133 @@
 {
-    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
-    "blocks": [
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
         {
-            "type": "prompt",
-            "alignment": "left",
-            "segments": [
-                {
-                    "properties": {
-                        "always_enabled": true,
-                        "cache_duration": "none",
-                        "status_template": "{{ if eq .Code 0 }}<blue>󰅁</>{{ else if eq .Code 130 }}<blue>󰅁</>{{ else }}<red>󰅁</>{{ end }}"
-                    },
-                    "template": "{{ .String }} ",
-                    "type": "status",
-                    "style": "plain"
-                },
-                {
-                    "properties": {
-                        "cache_duration": "none"
-                    },
-                    "template": "{{ .HostName }} ",
-                    "foreground": "green",
-                    "type": "session",
-                    "style": "plain"
-                },
-                {
-                    "properties": {
-                        "branch_icon": "",
-                        "cache_duration": "none",
-                        "fetch_status": false
-                    },
-                    "template": "git<white>:</>{{ .HEAD }} ",
-                    "foreground": "magenta",
-                    "type": "git",
-                    "style": "plain"
-                },
-                {
-                    "template": "{{ if .Env.CONTAINER_ENV }}container<white>:</>{{ .Env.CONTAINER_ENV }} {{ end }}",
-                    "foreground": "red",
-                    "type": "text",
-                    "style": "plain"
-                },
-                {
-                    "template": "{{ if .Env.IN_NIX_SHELL }}nix<white>:</>{{ .Env.IN_NIX_SHELL }} {{ end }}",
-                    "foreground": "red",
-                    "type": "text",
-                    "style": "plain"
-                },
-                {
-                    "properties": {
-                        "cache_duration": "none",
-                        "display_mode": "environment",
-                        "fetch_virtual_env": true
-                    },
-                    "template": "python<white>:</>{{ .Full }} ",
-                    "foreground": "cyan",
-                    "type": "python",
-                    "style": "plain"
-                },
-                {
-                    "properties": {
-                        "cache_duration": "none",
-                        "display_mode": "context"
-                    },
-                    "template": "go<white>:</>{{ .Full }} ",
-                    "foreground": "cyan",
-                    "type": "go",
-                    "style": "plain"
-                },
-                {
-                    "properties": {
-                        "cache_duration": "none",
-                        "parse_kubeconfig": true
-                    },
-                    "template": "k8s<white>:</>{{ .Context }}{{if .Namespace }}<white>:</>{{ .Namespace }}{{ else }}<white>:</>default{{ end }} ",
-                    "foreground": "yellow",
-                    "type": "kubectl",
-                    "style": "plain"
-                },
-                {
-                    "properties": {
-                        "source": "first_match"
-                    },
-                    "template": "az<white>:</>{{ .EnvironmentName }} ",
-                    "foreground": "yellow",
-                    "type": "az",
-                    "style": "plain"
-                }
-            ],
-            "newline": true
+          "options": {
+            "always_enabled": true,
+            "cache_duration": "none",
+            "status_template": "{{ if eq .Code 0 }}<blue>󰅁</>{{ else if eq .Code 130 }}<blue>󰅁</>{{ else }}<red>󰅁</>{{ end }}"
+          },
+          "template": "{{ .String }} ",
+          "type": "status",
+          "style": "plain"
         },
         {
-            "type": "prompt",
-            "alignment": "left",
-            "segments": [
-                {
-                    "properties": {
-                        "always_enabled": true,
-                        "cache_duration": "none",
-                        "status_template": "{{ if eq .Code 0 }}<green>󰅂</>{{ else if eq .Code 130 }}<green>󰅂</>{{ else }}<red>󰅂</>{{ end }}"
-                    },
-                    "template": "{{ .String }} ",
-                    "type": "status",
-                    "style": "plain"
-                },
-                {
-                    "properties": {
-                        "cache_duration": "none",
-                        "folder_separator_icon": " <white></> ",
-                        "home_icon": "home",
-                        "style": "agnoster_full"
-                    },
-                    "template": "{{ .Path }} ",
-                    "foreground": "blue",
-                    "type": "path",
-                    "style": "plain"
-                }
-            ],
-            "newline": true
+          "options": {
+            "cache_duration": "none"
+          },
+          "template": "{{ .HostName }} ",
+          "foreground": "green",
+          "type": "session",
+          "style": "plain"
+        },
+        {
+          "options": {
+            "branch_icon": "",
+            "cache_duration": "none",
+            "fetch_status": false
+          },
+          "template": "git<white>:</>{{ .HEAD }} ",
+          "foreground": "magenta",
+          "type": "git",
+          "style": "plain"
+        },
+        {
+          "template": "{{ if .Env.CONTAINER_ENV }}container<white>:</>{{ .Env.CONTAINER_ENV }} {{ end }}",
+          "foreground": "red",
+          "type": "text",
+          "style": "plain"
+        },
+        {
+          "template": "{{ if .Env.IN_NIX_SHELL }}nix<white>:</>{{ .Env.IN_NIX_SHELL }} {{ end }}",
+          "foreground": "red",
+          "type": "text",
+          "style": "plain"
+        },
+        {
+          "options": {
+            "cache_duration": "none",
+            "display_mode": "environment",
+            "fetch_virtual_env": true
+          },
+          "template": "python<white>:</>{{ .Full }} ",
+          "foreground": "cyan",
+          "type": "python",
+          "style": "plain"
+        },
+        {
+          "options": {
+            "cache_duration": "none",
+            "display_mode": "context"
+          },
+          "template": "go<white>:</>{{ .Full }} ",
+          "foreground": "cyan",
+          "type": "go",
+          "style": "plain"
+        },
+        {
+          "options": {
+            "cache_duration": "none",
+            "parse_kubeconfig": true
+          },
+          "template": "k8s<white>:</>{{ .Context }}{{if .Namespace }}<white>:</>{{ .Namespace }}{{ else }}<white>:</>default{{ end }} ",
+          "foreground": "yellow",
+          "type": "kubectl",
+          "style": "plain"
+        },
+        {
+          "options": {
+            "source": "first_match"
+          },
+          "template": "az<white>:</>{{ .EnvironmentName }} ",
+          "foreground": "yellow",
+          "type": "az",
+          "style": "plain"
+        },
+        {
+          "options": {
+            "cache_duration": "168h"
+          },
+          "template": "oh-my-posh<white>:</>{{ .Latest }} ",
+          "foreground": "magenta",
+          "type": "upgrade",
+          "style": "plain"
         }
-    ],
-    "version": 3
+      ],
+      "newline": true
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "options": {
+            "always_enabled": true,
+            "cache_duration": "none",
+            "status_template": "{{ if eq .Code 0 }}<green>󰅂</>{{ else if eq .Code 130 }}<green>󰅂</>{{ else }}<red>󰅂</>{{ end }}"
+          },
+          "template": "{{ .String }} ",
+          "type": "status",
+          "style": "plain"
+        },
+        {
+          "options": {
+            "cache_duration": "none",
+            "folder_separator_icon": " <white></> ",
+            "home_icon": "home",
+            "style": "agnoster_full"
+          },
+          "template": "{{ .Path }} ",
+          "foreground": "blue",
+          "type": "path",
+          "style": "plain"
+        }
+      ],
+      "newline": true
+    }
+  ],
+  "version": 3
 }

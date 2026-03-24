@@ -1,5 +1,5 @@
 {{- $isDevContainer := or (env "REMOTE_CONTAINERS") (env "CODESPACES") | not | not -}}
 {{- $isWSL := and (eq .chezmoi.os "linux") (contains (lower .chezmoi.kernel.osrelease) "microsoft") -}}
 {{ if and .personal (not (or ($isDevContainer) ($isWSL))) -}}
-{{ pass "homenas/ovm/rsync/toni" }}
+{{ pass "homenas/omv/rsync/toni" }}
 {{ end -}}

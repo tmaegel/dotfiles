@@ -1,4 +1,4 @@
-rpm-ostree:
+rpm_ostree:
   install:
     - distrobox
     - gnome-shell-extension-appindicator

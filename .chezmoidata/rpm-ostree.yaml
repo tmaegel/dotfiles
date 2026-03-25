@@ -6,6 +6,7 @@ rpm_ostree:
     - gnome-shell-extension-dash-to-dock
     - gnome-shell-extension-just-perfection
     - gnome-tweaks
+    - numix-icon-theme
     - numix-icon-theme-circle
   remove:
     - fedora-bookmarks

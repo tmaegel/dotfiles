@@ -28,3 +28,13 @@
   url = "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Ubuntu.tar.xz"
   exact = true
   refreshPeriod = "168h"
+[".local/share/icons/Nordzy-cursors"]
+  type = "archive"
+  url = "https://github.com/guillaumeboehm/Nordzy-cursors/releases/download/v2.4.0/Nordzy-cursors.tar.gz"
+  exact = true
+  refreshPeriod = "168h"
+[".local/share/icons/Nordzy-cursors-white"]
+  type = "archive"
+  url = "https://github.com/guillaumeboehm/Nordzy-cursors/releases/download/v2.4.0/Nordzy-cursors-white.tar.gz"
+  exact = true
+  refreshPeriod = "168h"

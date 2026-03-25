@@ -22,7 +22,9 @@ flatpak list --app --columns=application,origin | awk '$2 == "fedora" {print $1}
   flatpak uninstall --noninteractive "$app"
 done
 
-flatpak remote-delete fedora
+if flatpak remotes --columns=name | grep -q fedora; then
+  flatpak remote-delete fedora
+fi
 flatpak uninstall --unused --noninteractive
 
 {{- range .flatpaks }}

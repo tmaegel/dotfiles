@@ -33,8 +33,10 @@
   url = "https://github.com/guillaumeboehm/Nordzy-cursors/releases/download/v2.4.0/Nordzy-cursors.tar.gz"
   exact = true
   refreshPeriod = "168h"
+  stripComponents = 1
 [".local/share/icons/Nordzy-cursors-white"]
   type = "archive"
   url = "https://github.com/guillaumeboehm/Nordzy-cursors/releases/download/v2.4.0/Nordzy-cursors-white.tar.gz"
   exact = true
   refreshPeriod = "168h"
+  stripComponents = 1

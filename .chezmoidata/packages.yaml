@@ -4,6 +4,7 @@ packages:
     - bat
     - curl
     - direnv
+    - eza
     - fd-find
     - fzf
     - gawk
@@ -35,6 +36,7 @@ packages:
     - curl
     - direnv
     - dnf-plugins-core
+    - eza
     - fd-find
     - fzf
     - gawk

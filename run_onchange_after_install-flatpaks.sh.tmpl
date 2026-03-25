@@ -1,0 +1,31 @@
+{{- $isDistroboxContainer := ne (env "DISTROBOX_ENTER_PATH") "" -}}
+{{- $isDevContainer := or (env "REMOTE_CONTAINERS") (env "CODESPACES") | not | not -}}
+{{- $isWSL := and (eq .chezmoi.os "linux") (contains (lower .chezmoi.kernel.osrelease) "microsoft") -}}
+{{ if not (or ($isDistroboxContainer) ($isDevContainer) ($isWSL)) -}}
+#!/usr/bin/env bash
+
+# -u: Treat unset variables as an error when substituting.
+# -e: Exit immediately if a command exits with a non-zero status.
+# -o pipefail: the return value of a pipeline is the status of the
+#              last command to exit with a non-zero status.
+set -eo pipefail
+
+echo ">>> RUN $(basename "$0")"
+
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+flatpak pin | awk '/^  /{print $1}' | while read pin; do
+  flatpak pin --remove "$pin"
+done
+
+flatpak list --app --columns=application,origin | awk '$2 == "fedora" {print $1}' | while read app; do
+  flatpak uninstall --noninteractive "$app"
+done
+
+flatpak remote-delete fedora
+flatpak uninstall --unused --noninteractive
+
+{{- range .flatpaks }}
+flatpak install --noninteractive flathub {{ . }}
+{{- end }}
+{{ end -}}

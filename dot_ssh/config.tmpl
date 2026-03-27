@@ -1,0 +1,46 @@
+{{- $isDistroboxContainer := ne (env "DISTROBOX_ENTER_PATH") "" -}}
+{{ if and .personal $isDistroboxContainer -}}
+Host *
+  ForwardAgent no
+  AddKeysToAgent no
+  Compression no
+  ServerAliveInterval 60
+  ServerAliveCountMax 3
+  HashKnownHosts no
+  UserKnownHostsFile ~/.ssh/known_hosts
+  ControlMaster no
+  ControlPath ~/.ssh/master-%r@%n:%p
+  ControlPersist no
+Host homenas
+  User toni
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/homenas_toni_rsa
+Host root.storage-box
+  User {{ pass "hetzner.com/storage_box/root/username" }}
+  HostName {{ pass "hetzner.com/storage_box/root/hostname" }}
+  Port 23
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/hetzner_storage_box_root_ed25519
+Host piserver.storage-box
+  User {{ pass "hetzner.com/storage_box/piserver/username" }}
+  HostName {{ pass "hetzner.com/storage_box/piserver/hostname" }}
+  Port 23
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/hetzner_storage_box_u418094-sub1_ed25519
+Host omv.storage-box
+  User {{ pass "hetzner.com/storage_box/omv/username" }}
+  HostName {{ pass "hetzner.com/storage_box/omv/hostname" }}
+  Port 23
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/hetzner_storage_box_u418094-sub2_ecdsa
+Host gitlab.com
+  User git
+  HostName gitlab.com
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/gitlab_main_rsa
+Host github.com
+  User git
+  HostName github.com
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/github_ecdsa
+{{ end -}}

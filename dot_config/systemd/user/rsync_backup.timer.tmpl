@@ -1,6 +1,7 @@
+{{- $isDistroboxContainer := ne (env "DISTROBOX_ENTER_PATH") "" -}}
 {{- $isDevContainer := or (env "REMOTE_CONTAINERS") (env "CODESPACES") | not | not -}}
 {{- $isWSL := and (eq .chezmoi.os "linux") (contains (lower .chezmoi.kernel.osrelease) "microsoft") -}}
-{{ if and .personal (not (or ($isDevContainer) ($isWSL))) -}}
+{{ if and .personal (not (or ($isDistroboxContainer) ($isDevContainer) ($isWSL))) -}}
 [Unit]
 Description=Sync data with homenas
 

@@ -1,3 +1,5 @@
+{{- $isDevContainer := or (env "REMOTE_CONTAINERS") (env "CODESPACES") | not | not -}}
+{{ if not $isDevContainer -}}
 [alias]
 	a = "add"
 	aliases = "!git config --list | grep alias"
@@ -88,3 +90,4 @@
 
 [commit]
 	gpgsign = true
+{{ end -}}

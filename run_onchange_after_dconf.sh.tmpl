@@ -11,6 +11,11 @@
 set -eo pipefail
 
 echo ">>> RUN $(basename "$0")"
+
+if ! command -v dconf > /dev/null; then
+    echo "Skip: dconf is not installed"
+    exit 0
+fi
 {{ range .dconf.general }}
 echo "dconf write {{ . }}"
 dconf write {{ . }}

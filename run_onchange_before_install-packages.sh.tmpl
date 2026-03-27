@@ -11,9 +11,22 @@
 set -eo pipefail
 
 echo ">>> RUN $(basename "$0")"
+
 {{ if eq .chezmoi.osRelease.id "ubuntu" -}}
+
+if ! command -v apt > /dev/null; then
+    echo "Skip: apt is not installed"
+    exit 0
+fi
+
 sudo apt install -y {{ .packages.ubuntu | join " " }}
 {{ else if eq .chezmoi.osRelease.id "fedora" -}}
+
+if ! command -v dnf > /dev/null; then
+    echo "Skip: dnf is not installed"
+    exit 0
+fi
+
 sudo dnf install {{ .packages.fedora | join " " }}
 {{ end -}}
 

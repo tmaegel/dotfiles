@@ -12,6 +12,11 @@ set -eo pipefail
 
 echo ">>> RUN $(basename "$0")"
 
+if ! command -v flatpak > /dev/null; then
+    echo "Skip: flatpak is not installed"
+    exit 0
+fi
+
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 flatpak pin | awk '/^  /{print $1}' | while read pin; do

@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
+
 {{ if eq .chezmoi.osRelease.id "ubuntu" -}}
-alias cat=batcat
+if command -v batcat > /dev/null; then
+  alias cat=batcat
+fi
 {{ else -}}
-alias cat=bat
+if command -v bat > /dev/null; then
+  alias cat=bat
+fi
 {{ end -}}

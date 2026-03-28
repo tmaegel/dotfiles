@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+
 {{ if eq .chezmoi.osRelease.id "ubuntu" -}}
-alias fd=fdfind
+if command -v fdfind > /dev/null; then
+    alias fd=fdfind
+fi
 {{ end -}}

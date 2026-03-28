@@ -1,7 +1,4 @@
-{{- $isDistroboxContainer := ne (env "DISTROBOX_ENTER_PATH") "" -}}
-{{- $isDevContainer := or (env "REMOTE_CONTAINERS") (env "CODESPACES") | not | not -}}
-{{- $isWSL := and (eq .chezmoi.os "linux") (contains (lower .chezmoi.kernel.osrelease) "microsoft") -}}
-{{ if or ($isDistroboxContainer) ($isDevContainer) ($isWSL) -}}
+{{ if and (or (eq .hosttype "wsl") (eq .hosttype "desktop")) (eq .chezmoi.os "linux") -}}
 #!/usr/bin/env bash
 
 # -u: Treat unset variables as an error when substituting.

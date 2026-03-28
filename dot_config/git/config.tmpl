@@ -1,5 +1,4 @@
-{{- $isDevContainer := or (env "REMOTE_CONTAINERS") (env "CODESPACES") | not | not -}}
-{{ if not $isDevContainer -}}
+{{ if or (eq .hosttype "wsl") (eq .hosttype "desktop") -}}
 [alias]
 	a = "add"
 	aliases = "!git config --list | grep alias"

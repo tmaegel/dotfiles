@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
-alias k="kubectl"
-alias kubectl="kubecolor"
+
+if command -v kubectl > /dev/null; then
+  alias k="kubectl"
+fi
+if command -v kubecolor > /dev/null; then
+  alias kubectl="kubecolor"
+fi

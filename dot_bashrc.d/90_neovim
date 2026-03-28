@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
-export EDITOR="nvim"
-export VISUAL="nvim"
-alias vim="nvim"
-alias vimdiff="nvim -d"
+
+if command -v nvim > /dev/null; then
+    export EDITOR="nvim"
+    export VISUAL="nvim"
+    alias vim="nvim"
+    alias vimdiff="nvim -d"
+else
+    export EDITOR="vim"
+    export VISUAL="vim"
+    alias vim="vim"
+    alias vimdiff="vimdiff"
+fi

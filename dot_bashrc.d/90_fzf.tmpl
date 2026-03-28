@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
+
+if ! command -v fzf > /dev/null; then
+  exit 0
+fi
+
 export FZF_DEFAULT_COMMAND="fd --hidden"
 export FZF_ALT_C_COMMAND="fd --hidden --type d"
 export FZF_CTRL_T_COMMAND="fd --hidden --type f"

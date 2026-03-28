@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
+
+if ! command -v fzf > /dev/null; then
+  exit 0
+fi
+
 source ~/.local/share/bash-completion/completions/fzf/fzf-bash-completion.sh
 bind -x '"\t": fzf_bash_completion'
 FZF_TAB_COMPLETION_PROMPT=' '

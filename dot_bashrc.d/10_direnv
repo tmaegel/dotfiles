@@ -1,2 +1,7 @@
 #!/usr/bin/env bash
+
+if ! command -v direnv > /dev/null; then
+  exit 0
+fi
+
 eval "$(direnv hook bash)"

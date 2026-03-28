@@ -1,3 +1,4 @@
+{{ if or (eq .hosttype "wsl") (eq .hosttype "desktop") -}}
 [
   {
     "key": "alt+left",
@@ -64,3 +65,4 @@
     "command": "-workbench.action.previousEditorInGroup"
   }
 ]
+{{ end -}}

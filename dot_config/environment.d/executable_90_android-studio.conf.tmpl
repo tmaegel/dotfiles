@@ -1,2 +1,4 @@
+{{ if and (eq .hosttype "desktop") (eq .chezmoi.os "linux") -}}
 ANDROID_HOME=/home/{{ .chezmoi.username }}/.android-sdk
 ANDROID_USER_HOME=/home/{{ .chezmoi.username }}/.android
+{{ end -}}

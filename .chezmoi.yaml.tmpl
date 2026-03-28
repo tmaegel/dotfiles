@@ -11,13 +11,24 @@
 {{- end -}}
 
 {{- $email := "tmaegel@posteo.de" -}}
+{{- /* If email was previously set, reuses it */ -}}
 {{- if hasKey . "email" -}}
 {{-   $email = .email -}}
 {{- else if $interactive -}}
 {{-   $email = promptString "What is your email address" $email -}}
 {{- end -}}
 
+{{- $choices := list "devcontainer" "wsl" "desktop" -}}
+{{- $hosttype := "devcontainer" -}}
+{{- /* If hosttype was previously set, reuses it */ -}}
+{{- if hasKey . "hosttype" -}}
+{{-   $hosttype = .hosttype -}}
+{{- else if $interactive -}}
+{{-   $hosttype = promptChoice "What type of host are you on" $choices $hosttype -}}
+{{- end -}}
+
 {{- $personal := false -}}
+{{- /* If personal was previously set, reuses it */ -}}
 {{- if hasKey . "personal" -}}
 {{-   $personal = .personal -}}
 {{- else if $interactive -}}
@@ -33,6 +44,7 @@ sourceDir: {{ .chezmoi.sourceDir | quote }}
 data:
     name: {{ $name | quote }}
     email: {{ $email | quote }}
+    hosttype: {{ $hosttype }}
     personal: {{ $personal }}
 
 diff:

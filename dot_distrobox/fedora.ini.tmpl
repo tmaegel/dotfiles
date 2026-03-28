@@ -1,3 +1,4 @@
+{{ if and (eq .hosttype "desktop") (eq .chezmoi.os "linux") -}}
 [fedora]
 image=fedora:43
 additional_packages="git"
@@ -17,3 +18,4 @@ init_hooks=ln -sf /usr/bin/distrobox-host-exec /usr/bin/podman-compose;
 init_hooks=ln -sf /usr/bin/distrobox-host-exec /usr/bin/podman;
 init_hooks=ln -sf /usr/bin/distrobox-host-exec /usr/bin/rpm-ostree;
 # init_hooks=~/.local/share/chezmoi/install.sh;
+{{ end -}}

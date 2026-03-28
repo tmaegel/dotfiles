@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
-alias ls="eza --icons=auto --group-directories-first"
+
+if command -v eza > /dev/null; then
+    alias ls="eza --icons=auto --group-directories-first"
+fi
+
 alias lt="ls --tree"
 alias la="ls -la"
 alias lat="ls -la --tree"

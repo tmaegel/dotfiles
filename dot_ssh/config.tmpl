@@ -1,5 +1,4 @@
-{{- $isDistroboxContainer := ne (env "DISTROBOX_ENTER_PATH") "" -}}
-{{ if and .personal $isDistroboxContainer -}}
+{{ if and .personal (eq .hosttype "desktop") (eq .chezmoi.os "linux") -}}
 Host *
   ForwardAgent no
   AddKeysToAgent no

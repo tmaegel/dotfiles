@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if ! command -v fzf > /dev/null; then
-  exit 0
+  return
 fi
 
 source ~/.local/share/bash-completion/completions/fzf/fzf-bash-completion.sh

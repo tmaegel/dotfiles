@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if ! command -v zoxide > /dev/null; then
-  exit 0
+  return
 fi
 
 export _ZO_FZF_OPTS="$FZF_DEFAULT_OPTS"

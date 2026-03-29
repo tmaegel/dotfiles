@@ -9,6 +9,14 @@ set -eo pipefail
 
 echo ">>> RUN $(basename "$0")"
 
+{{ if eq .hosttype "desktop" -}}
+if [[ -z ${DISTROBOX_ENTER_PATH} ]]; then
+    echo "Skip: Not in a distrobox container"
+    exit 0
+fi
+
+{{ end -}}
+
 if ! command -v nix > /dev/null; then
   sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install) --no-daemon --no-modify-profile
 fi

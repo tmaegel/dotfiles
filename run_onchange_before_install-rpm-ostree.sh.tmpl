@@ -16,5 +16,5 @@ fi
 
 rpm-ostree reset
 rpm-ostree install --idempotent {{- range .rpm_ostree.install }} {{ . }}{{- end }}
-sudo rpm-ostree override remove {{- range .rpm_ostree.remove }} {{ . }}{{- end }}
+rpm-ostree override remove {{- range .rpm_ostree.remove }} {{ . }}{{- end }}
 {{ end -}}

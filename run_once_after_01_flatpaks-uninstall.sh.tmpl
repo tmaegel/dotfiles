@@ -32,8 +32,3 @@ if flatpak remotes --columns=name | grep -q fedora; then
   flatpak remote-delete fedora
 fi
 flatpak uninstall --unused --noninteractive
-
-{{- range .flatpaks }}
-flatpak install --noninteractive flathub {{ . }}
-{{- end }}
-{{ end -}}

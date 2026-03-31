@@ -2,7 +2,9 @@ vscode:
   extensions:
     - esbenp.prettier-vscode
     - GitHub.copilot-chat
+    - mkhl.shfmt
     - ms-vscode-remote.remote-containers
     - redhat.vscode-yaml
+    - timonwong.shellcheck
     - zhuangtongfa.One-dark-pro
 

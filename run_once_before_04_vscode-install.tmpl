@@ -9,6 +9,11 @@ set -eo pipefail
 
 echo ">>> RUN $(basename "$0")"
 
+if command -v code > /dev/null; then
+    echo "Skip: code is already installed"
+    exit 0
+fi
+
 {{ if eq .chezmoi.osRelease.id "ubuntu" -}}
 
 if ! command -v apt > /dev/null; then
@@ -16,9 +21,9 @@ if ! command -v apt > /dev/null; then
     exit 0
 fi
 
-wget https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64 -O code.deb
+wget "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64" -O code.deb
 sudo dpkg -i code.deb
-rm -v code.deb
+rm code.deb
 {{ else if eq .chezmoi.osRelease.id "fedora" -}}
 
 if ! command -v dnf > /dev/null; then
@@ -26,9 +31,9 @@ if ! command -v dnf > /dev/null; then
     exit 0
 fi
 
-wget https://code.visualstudio.com/sha/download?build=stable&os=linux-rpm-x64 -O code.rpm
+wget "https://code.visualstudio.com/sha/download?build=stable&os=linux-rpm-x64" -O code.rpm
 sudo dnf install code.rpm
-rm -v code.rpm
+rm code.rpm
 {{ end -}}
 
 {{- range .vscode.extensions }}

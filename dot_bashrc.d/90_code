@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-if command -v flatpak > /dev/null; then
-    alias code="flatpak run com.visualstudio.code"
-fi

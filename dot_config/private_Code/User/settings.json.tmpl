@@ -4,6 +4,10 @@
   "breadcrumbs.symbolPath": "off",
   "chat.fontSize": 16,
   "chat.viewSessions.orientation": "stacked",
+  "dev.containers.defaultExtensions": [
+    "esbenp.prettier-vscode",
+    "redhat.vscode-yaml"
+  ],
   "dev.containers.defaultFeatures": {
     "ghcr.io/devcontainers/features/nix:1": {
       "version": "latest",
@@ -13,10 +17,6 @@
       "version": "latest",
     }
   },
-  "dev.containers.defaultExtensions": [
-    "esbenp.prettier-vscode",
-    "redhat.vscode-yaml"
-  ],
   "editor.guides.indentation": true, // we try to make semantic highlighting look good
   "editor.minimap.enabled": false,
   "editor.overviewRulerBorder": false,
@@ -80,6 +80,17 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
   },
+  "[shellscript]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.shellcheck": "explicit"
+    }
+  },
+  "shfmt.executableArgs": ["-i", "2", "-s", "-bn", "-ci", "-sr"],
+  "shellcheck.customArgs": ["-o", "all"],
+  "shellcheck.enable": true,
+  "shellcheck.enableQuickFix": true,
+  "shellcheck.exclude": [],
   "[yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml",
     "editor.formatOnSave": true

@@ -28,6 +28,7 @@
   url = "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Ubuntu.tar.xz"
   exact = true
   refreshPeriod = "168h"
+{{ if and (eq .hosttype "desktop") (eq .chezmoi.os "linux") -}}
 [".local/share/icons/Nordzy-cursors"]
   type = "archive"
   url = "https://github.com/guillaumeboehm/Nordzy-cursors/releases/download/v2.4.0/Nordzy-cursors.tar.gz"
@@ -40,3 +41,29 @@
   exact = true
   refreshPeriod = "168h"
   stripComponents = 1
+[".local/share/gnome-shell/extensions/appindicatorsupport@rgcjonas.gmail.com"]
+  type = "archive"
+  url = "https://extensions.gnome.org/extension-data/appindicatorsupportrgcjonas.gmail.com.v63.shell-extension.zip"
+  exact = true
+  stripComponents = 1
+[".local/share/gnome-shell/extensions/caffeine@patapon.info"]
+  type = "archive"
+  url = "https://extensions.gnome.org/extension-data/caffeinepatapon.info.v59.shell-extension.zip"
+  exact = true
+  stripComponents = 1
+[".local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com"]
+  type = "archive"
+  url = "https://extensions.gnome.org/extension-data/dash-to-dockmicxgx.gmail.com.v103.shell-extension.zip"
+  exact = true
+  stripComponents = 1
+[".local/share/gnome-shell/extensions/just-perfection-desktop@just-perfection"]
+  type = "archive"
+  url = "https://extensions.gnome.org/extension-data/just-perfection-desktopjust-perfection.v36.shell-extension.zip"
+  exact = true
+  stripComponents = 1
+[".local/share/gnome-shell/extensions/tiling-assistant@leleat-on-github"]
+  type = "archive"
+  url = "https://extensions.gnome.org/extension-data/tiling-assistantleleat-on-github.v54.shell-extension.zip"
+  exact = true
+  stripComponents = 1
+{{ end -}}

@@ -25,7 +25,7 @@ flatpak list --app --columns=application,origin | awk '$2 == "fedora" {print $1}
 done
 
 flatpak list --runtime --columns=application,origin | awk '$2 == "fedora" {print $1}' | while read runtime; do
-  flatpak uninstall --noninteractive "$runtime"
+  flatpak uninstall "$runtime"
 done
 
 if flatpak remotes --columns=name | grep -q fedora; then

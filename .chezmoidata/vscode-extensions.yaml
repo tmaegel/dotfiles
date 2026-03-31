@@ -1,0 +1,8 @@
+vscode:
+  extensions:
+    - esbenp.prettier-vscode
+    - GitHub.copilot-chat
+    - ms-vscode-remote.remote-containers
+    - redhat.vscode-yaml
+    - zhuangtongfa.One-dark-pro
+

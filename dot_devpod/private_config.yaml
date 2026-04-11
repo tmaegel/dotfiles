@@ -1,0 +1,16 @@
+contexts:
+  default:
+    defaultIde: none
+    defaultProvider: docker
+    providers:
+      docker:
+        creationTimestamp: "2026-04-10T13:28:49Z"
+        initialized: true
+        options:
+          DOCKER_BUILDER: {}
+          DOCKER_HOST: {}
+          DOCKER_PATH:
+            userProvided: true
+            value: podman
+          INACTIVITY_TIMEOUT: {}
+defaultContext: default

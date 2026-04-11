@@ -8,8 +8,7 @@
 set -eo pipefail
 
 echo ">>> RUN $(basename "$0")"
-
-{{- range .vscode.extensions }}
+{{ range .vscode.extensions }}
 code --install-extension {{ . }}
 {{- end }}
 {{ end -}}

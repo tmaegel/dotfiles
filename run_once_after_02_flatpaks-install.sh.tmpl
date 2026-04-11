@@ -13,8 +13,7 @@ if ! command -v flatpak > /dev/null; then
     echo "Skip: flatpak is not installed"
     exit 0
 fi
-
-{{- range .flatpaks }}
+{{ range .flatpaks }}
 flatpak install --noninteractive flathub {{ . }}
 {{- end }}
 {{ end -}}

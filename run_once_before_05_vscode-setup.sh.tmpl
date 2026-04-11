@@ -1,4 +1,4 @@
-{{ if and (eq .hosttype "desktop") (eq .chezmoi.os "linux") -}}
+{{ if and (or (eq .hosttype "wsl") (eq .hosttype "desktop")) (eq .chezmoi.os "linux") -}}
 #!/usr/bin/env bash
 
 # -u: Treat unset variables as an error when substituting.
@@ -9,11 +9,7 @@ set -eo pipefail
 
 echo ">>> RUN $(basename "$0")"
 
-if ! command -v rpm-ostree > /dev/null; then
-    echo "Skip: rpm-ostree is not installed"
-    exit 0
-fi
-
-rpm-ostree reset
-rpm-ostree override remove {{- range .rpm_ostree.remove }} {{ . }}{{- end }}
+{{- range .vscode.extensions }}
+code --install-extension {{ . }}
+{{- end }}
 {{ end -}}

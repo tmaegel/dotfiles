@@ -8,6 +8,5 @@ if command -v nvim > /dev/null; then
 else
     export EDITOR="vim"
     export VISUAL="vim"
-    alias vim="vim"
     alias vimdiff="vimdiff"
 fi

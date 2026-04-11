@@ -1,15 +1,14 @@
 flatpaks:
-  # - ca.desrt.dconf-editor
-  # - com.github.finefindus.eyedropper
-  # - com.github.flxzt.rnote
-  # - com.github.tchx84.Flatseal
-  # - com.google.AndroidStudio
-  # - com.google.Chrome
+  - ca.desrt.dconf-editor
+  - com.github.finefindus.eyedropper
+  - com.github.flxzt.rnote
+  - com.github.tchx84.Flatseal
+  - com.google.AndroidStudio
+  - com.google.Chrome
   - com.ranfdev.DistroShelf
-  # - com.slack.Slack
+  - com.slack.Slack
   - io.github.flattool.Warehouse
-  - io.podman_desktop.PodmanDesktop
-  # - org.gimp.GIMP
+  - org.gimp.GIMP
   - org.gnome.baobab
   - org.gnome.Calculator
   - org.gnome.Calendar
@@ -32,8 +31,10 @@ flatpaks:
   - org.gnome.TextEditor
   - org.gtk.Gtk3theme.adw-gtk3
   - org.gtk.Gtk3theme.adw-gtk3-dark
-  # - org.libreoffice.LibreOffice
-  # - org.localsend.localsend_app
-  # - org.mozilla.Thunderbird
-  # - org.signal.Signal
-  # - us.zoom.Zoom
+  - org.libreoffice.LibreOffice
+  - org.localsend.localsend_app
+  - org.mozilla.Thunderbird
+  - org.signal.Signal
+  - page.tesk.Refine
+  - sh.loft.devpod
+  - us.zoom.Zoom

@@ -7,7 +7,7 @@ dconf:
     - /org/gnome/desktop/interface/cursor-theme "'Nordzy-cursors-white'"
     - /org/gnome/desktop/interface/enable-animations true
     - /org/gnome/desktop/interface/enable-hot-corners false
-    - /org/gnome/desktop/interface/icon-theme "'Numix-Circle'"
+    - /org/gnome/desktop/interface/icon-theme "'Tela-circle-dark'"
     - /org/gnome/desktop/interface/monospace-font-name "'Hack Nerd Font 11'"
     - /org/gnome/desktop/interface/show-battery-percentage true
     - /org/gnome/desktop/peripherals/mouse/natural-scroll false

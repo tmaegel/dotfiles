@@ -10,7 +10,7 @@ set -eo pipefail
 echo ">>> RUN $(basename "$0")"
 
 if command -v rpm-ostree > /dev/null; then
-    echo "Skip: Immutable os detected"
+    echo "Skip: Immutable OS detected"
     exit 0
 fi
 

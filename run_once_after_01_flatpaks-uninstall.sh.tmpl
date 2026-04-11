@@ -14,8 +14,6 @@ if ! command -v flatpak > /dev/null; then
     exit 0
 fi
 
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-
 flatpak pin | awk '/^  /{print $1}' | while read pin; do
   flatpak pin --remove "$pin"
 done

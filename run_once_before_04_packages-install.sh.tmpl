@@ -9,6 +9,11 @@ set -eo pipefail
 
 echo ">>> RUN $(basename "$0")"
 
+if command -v rpm-ostree > /dev/null; then
+    echo "Skip: Immutable os detected"
+    exit 0
+fi
+
 {{ if eq .chezmoi.osRelease.id "ubuntu" -}}
 
 if ! command -v apt > /dev/null; then

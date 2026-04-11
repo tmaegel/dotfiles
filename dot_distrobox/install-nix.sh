@@ -1,4 +1,3 @@
-{{ if and (or (eq .hosttype "wsl") (eq .hosttype "desktop")) (eq .chezmoi.os "linux") -}}
 #!/usr/bin/env bash
 
 # -u: Treat unset variables as an error when substituting.
@@ -6,16 +5,6 @@
 # -o pipefail: the return value of a pipeline is the status of the
 #              last command to exit with a non-zero status.
 set -eo pipefail
-
-echo ">>> RUN $(basename "$0")"
-
-{{ if eq .hosttype "desktop" -}}
-if [[ -z ${DISTROBOX_ENTER_PATH} ]]; then
-    echo "Skip: Not in a distrobox container"
-    exit 0
-fi
-
-{{ end -}}
 
 if ! command -v nix > /dev/null; then
   sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install) --no-daemon --no-modify-profile
@@ -28,4 +17,3 @@ if ! command -v home-manager > /dev/null; then
   nix-channel --update
   nix-shell '<home-manager>' -A install
 fi
-{{ end -}}

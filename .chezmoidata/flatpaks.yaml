@@ -6,6 +6,7 @@ flatpaks:
   - com.google.AndroidStudio
   - com.google.Chrome
   - com.ranfdev.DistroShelf
+  - org.mozilla.firefox
   - com.slack.Slack
   - io.github.flattool.Warehouse
   - org.gimp.GIMP

@@ -20,14 +20,6 @@ flatpak pin | awk '/^  /{print $1}' | while read pin; do
   flatpak pin --remove "$pin"
 done
 
-flatpak list --app --columns=application,origin | awk '$2 == "fedora" {print $1}' | while read app; do
-  flatpak uninstall --noninteractive "$app"
-done
-
-flatpak list --runtime --columns=application,origin | awk '$2 == "fedora" {print $1}' | while read runtime; do
-  flatpak uninstall "$runtime"
-done
-
 if flatpak remotes --columns=name | grep -q fedora; then
   flatpak remote-delete fedora
 fi

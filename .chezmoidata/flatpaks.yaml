@@ -35,6 +35,5 @@ flatpaks:
   - org.localsend.localsend_app
   - org.mozilla.Thunderbird
   - org.signal.Signal
-  - page.tesk.Refine
   - sh.loft.devpod
   - us.zoom.Zoom

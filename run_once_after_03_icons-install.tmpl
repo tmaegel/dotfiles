@@ -10,5 +10,5 @@ set -eo pipefail
 echo ">>> RUN $(basename "$0")"
 
 URL="https://raw.githubusercontent.com/vinceliuice/Tela-circle-icon-theme/refs/heads/master/install.sh"
-curl -s "${URL}" | bash -s -- -a -n Tela-circle -c
+curl -sSL "${URL}" | bash -s -- -a -n Tela-circle -c
 {{ end -}}

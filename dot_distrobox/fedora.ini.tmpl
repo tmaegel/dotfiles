@@ -1,7 +1,7 @@
 {{ if and (eq .hosttype "desktop") (eq .chezmoi.os "linux") -}}
 [fedora]
 image=fedora:43
-additional_packages="git"
+additional_packages="android-tools dconf dnf-plugins-core git gnupg2 htop libnotify net-tools netcat oathtool pass pass-otp pciutils pinentry-gnome3 pre-commit restic rsync tldrwl-clipboard"
 init=false
 nvidia=false
 pull=true

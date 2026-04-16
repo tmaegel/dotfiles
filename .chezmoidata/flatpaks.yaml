@@ -1,12 +1,13 @@
 flatpaks:
   - ca.desrt.dconf-editor
+  - com.bitwarden.desktop
   - com.github.finefindus.eyedropper
   - com.github.flxzt.rnote
   - com.github.tchx84.Flatseal
   - com.google.AndroidStudio
   - com.google.Chrome
+  - com.mattjakeman.ExtensionManager
   - com.ranfdev.DistroShelf
-  - org.mozilla.firefox
   - com.slack.Slack
   - io.github.flattool.Warehouse
   - org.gimp.GIMP
@@ -34,6 +35,7 @@ flatpaks:
   - org.gtk.Gtk3theme.adw-gtk3-dark
   - org.libreoffice.LibreOffice
   - org.localsend.localsend_app
+  - org.mozilla.firefox
   - org.mozilla.Thunderbird
   - org.signal.Signal
   - sh.loft.devpod

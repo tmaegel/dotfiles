@@ -1,4 +1,4 @@
-{{ if eq .chezmoi.os "linux" -}}
+{{ if and (or (eq .hosttype "devcontainer") (eq .hosttype "wsl")) (eq .chezmoi.os "linux") -}}
 #!/usr/bin/env bash
 
 # -u: Treat unset variables as an error when substituting.
@@ -8,11 +8,6 @@
 set -eo pipefail
 
 echo ">>> RUN $(basename "$0")"
-
-if command -v rpm-ostree > /dev/null; then
-    echo "Skip: Immutable OS detected"
-    exit 0
-fi
 
 {{ if eq .chezmoi.osRelease.id "ubuntu" -}}
 

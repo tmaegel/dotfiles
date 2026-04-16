@@ -12,34 +12,16 @@ Host *
   ControlPersist no
 Host homenas
   User toni
-  PreferredAuthentications publickey
-  IdentityFile ~/.ssh/homenas_toni_rsa
 Host root.storage-box
-  User {{ pass "hetzner.com/storage_box/root/username" }}
-  HostName {{ pass "hetzner.com/storage_box/root/hostname" }}
+  User {{ (bitwardenFields "item" "a762f1a5-2860-40c6-a51a-b42e012ecb40").username.value }}
+  HostName {{ (bitwardenFields "item" "a762f1a5-2860-40c6-a51a-b42e012ecb40").hostname.value }}
   Port 23
-  PreferredAuthentications publickey
-  IdentityFile ~/.ssh/hetzner_storage_box_root_ed25519
 Host piserver.storage-box
-  User {{ pass "hetzner.com/storage_box/piserver/username" }}
-  HostName {{ pass "hetzner.com/storage_box/piserver/hostname" }}
+  User {{ (bitwardenFields "item" "d06ce2a8-c1eb-4048-9419-b42e012f5e1f").username.value }}
+  HostName {{ (bitwardenFields "item" "d06ce2a8-c1eb-4048-9419-b42e012f5e1f").hostname.value }}
   Port 23
-  PreferredAuthentications publickey
-  IdentityFile ~/.ssh/hetzner_storage_box_u418094-sub1_ed25519
 Host omv.storage-box
-  User {{ pass "hetzner.com/storage_box/omv/username" }}
-  HostName {{ pass "hetzner.com/storage_box/omv/hostname" }}
+  User {{ (bitwardenFields "item" "66dfd364-c2c9-424b-8113-b42e012f22bb").username.value }}
+  HostName {{ (bitwardenFields "item" "66dfd364-c2c9-424b-8113-b42e012f22bb").hostname.value }}
   Port 23
-  PreferredAuthentications publickey
-  IdentityFile ~/.ssh/hetzner_storage_box_u418094-sub2_ecdsa
-Host gitlab.com
-  User git
-  HostName gitlab.com
-  PreferredAuthentications publickey
-  IdentityFile ~/.ssh/gitlab_main_rsa
-Host github.com
-  User git
-  HostName github.com
-  PreferredAuthentications publickey
-  IdentityFile ~/.ssh/github_ecdsa
 {{ end -}}

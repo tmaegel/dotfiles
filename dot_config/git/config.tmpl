@@ -83,6 +83,7 @@
 [user]
 	email = "{{ .email }}"
 	name = "{{ .name }}"
+	signingkey = {{ (bitwarden "item" "06ff2494-b8a4-49c3-9516-b42d012c36ed").sshKey.publicKey }}
 
 [gpg]
 	format = ssh

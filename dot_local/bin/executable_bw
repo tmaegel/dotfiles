@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [[ -z "${BW_SESSION}" ]]; then
+	exec flatpak run --command=bw com.bitwarden.desktop "$@"
+else
+	exec flatpak run --command=bw com.bitwarden.desktop "$@" --session "${BW_SESSION}"
+fi

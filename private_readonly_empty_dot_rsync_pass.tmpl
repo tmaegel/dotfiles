@@ -1,3 +1,3 @@
 {{ if and .personal (eq .hosttype "desktop") (eq .chezmoi.os "linux") -}}
-{{ pass "homenas/omv/rsync/toni" }}
+{{ (bitwarden "item" "3563586d-dc2b-45ea-a4e8-b435013698e2").login.password }}
 {{ end -}}

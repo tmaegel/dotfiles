@@ -11,6 +11,7 @@
     "timonwong.shellcheck",
   ],
   "dev.containers.defaultFeatures": {
+    "ghcr.io/roul/devcontainer-features/bitwarden-cli:1": {},
     "ghcr.io/devcontainers/features/nix:1": {
       "version": "latest",
       "multiUser": false,
@@ -97,6 +98,7 @@
   "[yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml",
     "editor.formatOnSave": true
-  }
+  },
+  "vim.useSystemClipboard": true
 }
 {{ end -}}

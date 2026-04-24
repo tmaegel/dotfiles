@@ -111,7 +111,7 @@ dconf:
     - /org/gtk/gtk4/settings/file-chooser/sort-directories-first true
   fedora:
     - /org/gnome/shell/disable-user-extensions false
-    - /org/gnome/shell/enabled-extensions "['launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'appindicatorsupport@rgcjonas.gmail.com', 'caffeine@patapon.info', 'dash-to-dock@micxgx.gmail.com', 'just-perfection-desktop@just-perfection', 'tiling-assistant@leleat-on-github']"
+    - /org/gnome/shell/enabled-extensions "['launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'appindicatorsupport@rgcjonas.gmail.com', 'caffeine@patapon.info', 'dash-to-dock@micxgx.gmail.com', 'just-perfection-desktop@just-perfection', 'tiling-assistant@leleat-on-github', 'tailscale-gnome-qs@tailscale-qs.github.io']""
     - /org/gnome/shell/extensions/dash-to-dock/autohide-in-fullscreen false
     - /org/gnome/shell/extensions/dash-to-dock/background-color "'rgb(0,0,0)'"
     - /org/gnome/shell/extensions/dash-to-dock/background-opacity 0.6

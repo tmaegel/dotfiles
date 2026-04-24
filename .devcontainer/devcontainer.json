@@ -1,0 +1,59 @@
+{
+  "name": "chezmoi",
+  "image": "mcr.microsoft.com/devcontainers/base:trixie",
+
+  "features": {},
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "redhat.vscode-yaml",
+        "mkhl.shfmt",
+        "timonwong.shellcheck"
+      ],
+      "settings": {
+        "files.associations": {
+          "*.yml": "yaml",
+          ".yamlfmt": "yaml",
+          ".yamllint": "yaml"
+        },
+        "[github-actions-workflow]": {
+          "editor.defaultFormatter": "redhat.vscode-yaml",
+          "editor.formatOnSave": true
+        },
+        "[json]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.formatOnSave": true
+        },
+        "[jsonc]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.formatOnSave": true
+        },
+        "[markdown]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.formatOnSave": true
+        },
+        "[shellscript]": {
+          "editor.formatOnSave": true,
+          "editor.codeActionsOnSave": {
+            "source.fixAll.shellcheck": "explicit"
+          }
+        },
+        "shfmt.executableArgs": ["-i", "2", "-s", "-bn", "-ci", "-sr"],
+        "shellcheck.customArgs": ["-o", "all"],
+        "shellcheck.enable": true,
+        "shellcheck.enableQuickFix": true,
+        "shellcheck.exclude": [],
+        "[yaml]": {
+          "editor.defaultFormatter": "redhat.vscode-yaml",
+          "editor.formatOnSave": true
+        }
+      }
+    }
+  },
+
+  "mounts": [
+    "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,readonly"
+  ]
+}

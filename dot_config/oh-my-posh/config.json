@@ -9,7 +9,8 @@
           "options": {
             "always_enabled": true,
             "cache_duration": "none",
-            "status_template": "{{ if eq .Code 0 }}<blue>󰅁</>{{ else if eq .Code 130 }}<blue>󰅁</>{{ else }}<red>󰅁</>{{ end }}"
+            "status_template": "{{ if eq .Code 0 }}<blue>󰅁{{ else }}<red>󰅁</>{{ end }}",
+            "status_separator": ""
           },
           "template": "{{ .String }} ",
           "type": "status",
@@ -107,7 +108,8 @@
           "options": {
             "always_enabled": true,
             "cache_duration": "none",
-            "status_template": "{{ if eq .Code 0 }}<green>󰅂</>{{ else if eq .Code 130 }}<green>󰅂</>{{ else }}<red>󰅂</>{{ end }}"
+            "status_template": "{{ if eq .Code 0 }}<blue>󰅂{{ else }}<red>󰅂</>{{ end }}",
+            "status_separator": ""
           },
           "template": "{{ .String }} ",
           "type": "status",

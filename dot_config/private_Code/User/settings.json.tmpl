@@ -45,7 +45,7 @@
   "terminal.integrated.allowChords": false,
   "terminal.integrated.fontFamily": "\"Hack Nerd Font\", monospace",
   "terminal.integrated.minimumContrastRatio": 1, // prevent VSCode from modifying the terminal colors
-  "terminal.integrated.tabs.enabled": true,
+  "terminal.integrated.tabs.enabled": false,
   "update.mode": "none",
   "window.customTitleBarVisibility": "auto",
   "window.menuBarVisibility": "toggle",
@@ -57,15 +57,21 @@
     "activityBar.activeFocusBorder": "#23272E",
     "activityBar.background": "#23272E",
     "activityBar.border": "#1E2227",
+    "activityBarBottom.activeBorder": "#1E2227",
+    "activityBarTop.activeBorder": "#1E2227",
     "editorGroup.border": "#1E2227",
     "panel.border": "#1E2227",
+    "panelInput.border": "#1E2227",
+    "panelSection.border": "#1E2227",
+    "panelSectionHeader.border": "#23272e",
     "panelTitle.activeBorder": "#23272e",
     "sideBar.background": "#1E2227",
     "statusBar.background": "#1E2227",
     "tab.activeBorder": "#23272E",
     "tab.border": "#1E2227",
     "tab.inactiveBackground": "#1E2227",
-    "terminalOverviewRuler.border": "#23272e"
+    "terminal.border": "#23272e",
+    "terminalOverviewRuler.border": "#23272e",
   },
   "workbench.activityBar.location": "top",
   "workbench.editor.editorActionsLocation": "titleBar",
@@ -99,6 +105,68 @@
     "editor.defaultFormatter": "redhat.vscode-yaml",
     "editor.formatOnSave": true
   },
-  "vim.useSystemClipboard": true
+  "vim.hlsearch": true,
+  "vim.incsearch": true,
+  "vim.leader": "<space>",
+  "vim.useCtrlKeys": true,
+  "vim.useSystemClipboard": true,
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["o"],
+      "after": ["o", "<ESC>"],
+    },
+    {
+      "before": ["O"],
+      "after": ["O", "<ESC>"],
+    },
+    {
+      "before": ["<leader>", "a"],
+      "after": ["g", "g", "V", "G"],
+    },
+    {
+      "before": ["U"],
+      "commands": [":redo", "<CR>"],
+    },
+    {
+      "before": ["<leader>", "<Left>"],
+      "commands": [":tabprevious", "<CR>"],
+    },
+    {
+      "before": ["<leader>", "<Right>"],
+      "commands": [":tabnext", "<CR>"],
+    },
+    {
+      "before": ["<leader>", "b", "n"],
+      "commands": [":enew", "<CR>"],
+    },
+    {
+      "before": ["<leader>", "b", "h"],
+      "commands": [":sp", "<CR>"],
+    },
+    {
+      "before": ["<leader>", "b", "v"],
+      "commands": [":vsp", "<CR>"],
+    },
+    {
+      "before": ["<leader>", "p"],
+      "commands": ["workbench.action.showCommands"],
+    },
+    {
+      "before": ["<leader>", "t"],
+      "commands": ["workbench.action.tasks.runTask"],
+    },
+    {
+      "before": ["<leader>", "f", "f"],
+      "commands": ["workbench.action.quickOpen"],
+    },
+    {
+      "before": ["<leader>", "f", "g"],
+      "commands": ["workbench.action.findInFiles"],
+    },
+    {
+      "before": ["<leader>", "f", "d"],
+      "commands": ["workbench.view.explorer"],
+    },
+  ],
 }
 {{ end -}}

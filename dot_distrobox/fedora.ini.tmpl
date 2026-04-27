@@ -1,7 +1,8 @@
 {{ if and (eq .hosttype "desktop") (eq .chezmoi.os "linux") -}}
 [fedora]
 image=fedora:43
-additional_packages="android-tools dconf dnf-plugins-core git gnupg2 htop libnotify net-tools netcat oathtool pass pass-otp pciutils pinentry-gnome3 pre-commit restic rsync tldrwl-clipboard"
+additional_packages="android-tools dconf dnf-plugins-core git gnupg2 htop libnotify net-tools netcat pciutils pinentry-gnome3 pre-commit restic rsync tldr wl-clipboard"
+additional_packages="{{- range .packages.fedora }} {{ . }} {{- end -}}"
 init=false
 nvidia=false
 pull=true
@@ -16,5 +17,4 @@ init_hooks=ln -sf /usr/bin/distrobox-host-exec /usr/bin/docker;
 init_hooks=ln -sf /usr/bin/distrobox-host-exec /usr/bin/flatpak;
 init_hooks=ln -sf /usr/bin/distrobox-host-exec /usr/bin/podman-compose;
 init_hooks=ln -sf /usr/bin/distrobox-host-exec /usr/bin/podman;
-# init_hooks=~/.distrobox/install_nix.sh;
 {{ end -}}

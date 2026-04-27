@@ -9,7 +9,7 @@
           "options": {
             "always_enabled": true,
             "cache_duration": "none",
-            "status_template": "{{ if eq .Code 0 }}<blue>󰅁{{ else }}<red>󰅁</>{{ end }}",
+            "status_template": "{{ if eq .Code 0 }}<blue>{{ else }}<red></>{{ end }}",
             "status_separator": ""
           },
           "template": "{{ .String }} ",
@@ -108,7 +108,7 @@
           "options": {
             "always_enabled": true,
             "cache_duration": "none",
-            "status_template": "{{ if eq .Code 0 }}<blue>󰅂{{ else }}<red>󰅂</>{{ end }}",
+            "status_template": "{{ if eq .Code 0 }}<blue>{{ else }}<red></>{{ end }}",
             "status_separator": ""
           },
           "template": "{{ .String }} ",
@@ -118,7 +118,7 @@
         {
           "options": {
             "cache_duration": "none",
-            "folder_separator_icon": " <white></> ",
+            "folder_separator_icon": " <white> </> ",
             "home_icon": "home",
             "style": "agnoster_full"
           },

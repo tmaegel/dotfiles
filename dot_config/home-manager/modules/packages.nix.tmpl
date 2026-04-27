@@ -1,0 +1,10 @@
+{ pkgs, ... }:
+{
+
+  home.packages = with pkgs; [
+    {{- range .packages.nix }}
+    {{ . }}
+    {{- end }}
+  ];
+
+}

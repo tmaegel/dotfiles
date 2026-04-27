@@ -6,8 +6,10 @@
 #              last command to exit with a non-zero status.
 set -eo pipefail
 
+. ~/.bashrc
+
 if ! command -v nix > /dev/null; then
-  sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install) --no-daemon --no-modify-profile
+  sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install) --no-daemon --no-modify-profile --no-channel-add
 fi
 
 . ~/.bashrc

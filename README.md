@@ -1,5 +1,15 @@
 # dotfiles
 
+# Setup password manager
+
+```bash
+flatpak install flathub com.bitwarden.desktop
+bw config server https://vault.bitwarden.eu
+bw login
+export BW_SESSION=$(bw unlock --raw)
+alias bw="flatpak run --command=bw com.bitwarden.desktop --session $BW_SESSION"
+```
+
 ## Initialize system
 
 ```bash
@@ -11,7 +21,5 @@ sh -c "$(curl -fsLS get.chezmoi.io)" -- -b $HOME/.local/bin init --apply $GITHUB
 ```bash
 distrobox assemble create --file ~/.distrobox/fedora.ini
 distrobox enter fedora
-chezmoi state delete-bucket --bucket=entryState # Reset run_onchange_* scripts
-chezmoi state delete-bucket --bucket=scriptState # Reset run_once_* scripts
-chezmoi apply
+~/distrobox/install-nix.sh
 ```

@@ -1,27 +1,37 @@
 packages:
   ubuntu:
+    - ansible-lint
     - bash-completion
     - bat
+    - black
     - curl
     - direnv
     - eza
     - fd-find
+    - flake8
     - fzf
     - gawk
     - gcc
     - git-delta
+    - gopls
+    - isort
     - jq
+    - mypy
     - neovim
     - ripgrep
+    - shellcheck
+    - shfmt
     - tmux
     - unzip
     - vim
     - wget
+    - yamllint
     - zip
     - zoxide
   fedora:
     - bash-completion
     - bat
+    - black
     - curl
     - direnv
     - eza
@@ -30,12 +40,45 @@ packages:
     - gawk
     - gcc
     - git-delta
+    - gopls
     - jq
     - neovim
+    - python3-ansible-lint
+    - python3-flake8
+    - python3-isort
+    - python3-mypy
     - ripgrep
+    - shellcheck
+    - shfmt
     - tmux
     - unzip
     - vim
     - wget
+    - yamllint
     - zip
     - zoxide
+  nix:
+    - bash-language-server
+    - dockerfile-language-server-nodejs
+    - freeze
+    - glow
+    - gofumpt
+    - golangci-lint
+    - golines
+    - helm-ls
+    - k3d
+    - k9s
+    - kubecolor
+    - lua-language-server
+    - markdownlint-cli
+    - nap
+    - nil
+    - nixfmt-rfc-style
+    - pet
+    - prettier
+    - pyright
+    - smug
+    - stylua
+    - terraform-ls
+    - yaml-language-server
+    - yamlfmt

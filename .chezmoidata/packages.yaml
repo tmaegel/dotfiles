@@ -71,9 +71,8 @@ packages:
     - kubecolor
     - lua-language-server
     - markdownlint-cli
-    - nap
     - nil
-    - nixfmt-rfc-style
+    - nixfmt
     - pet
     - prettier
     - pyright

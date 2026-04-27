@@ -9,7 +9,7 @@ set -eo pipefail
 
 echo ">>> RUN $(basename "$0")"
 
-{{ if or (eq .chezmoi.osRelease.id "ubuntu") (.chezmoi.osRelease.id "debian") -}}
+{{ if or (eq .chezmoi.osRelease.id "ubuntu") (eq .chezmoi.osRelease.id "debian") -}}
 
 if ! command -v apt > /dev/null; then
     echo "Skip: apt is not installed"

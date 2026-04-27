@@ -59,7 +59,7 @@ packages:
     - zoxide
   nix:
     - bash-language-server
-    - dockerfile-language-server-nodejs
+    - dockerfile-language-server
     - freeze
     - glow
     - gofumpt

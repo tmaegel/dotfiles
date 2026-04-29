@@ -11,22 +11,24 @@
     "timonwong.shellcheck",
   ],
   "dev.containers.defaultFeatures": {
-    "ghcr.io/roul/devcontainer-features/bitwarden-cli:1": {
-      "server": "https://vault.bitwarden.eu",
-    },
     "ghcr.io/devcontainers/features/nix:1": {
       "version": "latest",
       "multiUser": false,
-      "packages": "{{- range .packages.nix }}{{ . }},{{- end }}",
+      "packages": "{{- range .packages.general.nix }}{{ . }},{{- end }}",
     },
     "ghcr.io/prulloac/devcontainer-features/pre-commit:1": {
       "version": "latest",
     },
-    "ghcr.io/guiyomh/features/vim:0": {}
+    "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
+      "packages": "{{- range .packages.devcontainer.ubuntu }}{{ . }},{{- end }}",
+    },
+    "ghcr.io/roul/devcontainer-features/bitwarden-cli:1": {
+      "server": "https://vault.bitwarden.eu",
+    },
   },
+  "dotfiles.installCommand": "install.sh",
   "dotfiles.repository": "tmaegel/dotfiles",
   "dotfiles.targetPath": "~/dotfiles",
-  "dotfiles.installCommand": "install.sh",
   "editor.guides.indentation": true, // we try to make semantic highlighting look good
   "editor.minimap.enabled": false,
   "editor.overviewRulerBorder": false,
@@ -80,7 +82,6 @@
     "terminal.border": "#23272e",
     "terminalOverviewRuler.border": "#23272e",
   },
-  "workbench.activityBar.location": "top",
   "workbench.editor.editorActionsLocation": "titleBar",
   "workbench.editor.enablePreview": false,
   "workbench.startupEditor": "none",

@@ -1,8 +1,7 @@
 {{ if and (eq .hosttype "desktop") (eq .chezmoi.os "linux") -}}
 [fedora]
-image=fedora:43
-additional_packages="android-tools dconf dnf-plugins-core git gnupg2 htop libnotify net-tools netcat pciutils pinentry-gnome3 pre-commit restic rsync tldr wl-clipboard"
-additional_packages="{{- range .packages.fedora }} {{ . }} {{- end -}}"
+image=fedora:44
+additional_packages="{{- range .packages.distrobox.fedora -}} {{ . }} {{ end -}}"
 init=false
 nvidia=false
 pull=true
@@ -11,7 +10,7 @@ replace=true
 start_now=false
 entry=false
 init_hooks=ln -sf /usr/bin/distrobox-host-exec /usr/bin/bootc;
-init_hooks=ln -sf /usr/bin/distrobox-host-exec /usr/bin/distrobox;
+init_hooks=ln -sf /usr/bin/distrobox-host-exec /usr/bin/code;
 init_hooks=ln -sf /usr/bin/distrobox-host-exec /usr/bin/docker-compose;
 init_hooks=ln -sf /usr/bin/distrobox-host-exec /usr/bin/docker;
 init_hooks=ln -sf /usr/bin/distrobox-host-exec /usr/bin/flatpak;

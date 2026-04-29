@@ -1,6 +1,6 @@
 {
   "name": "chezmoi",
-  "image": "mcr.microsoft.com/devcontainers/base:trixie",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
 
   "features": {},
 
@@ -54,6 +54,6 @@
   },
 
   "mounts": [
-    "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,readonly"
+    //  "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,readonly"
   ]
 }

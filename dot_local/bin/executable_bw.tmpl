@@ -1,3 +1,4 @@
+{{ if and (eq .hosttype "desktop") (eq .chezmoi.os "linux") -}}
 #!/usr/bin/env bash
 
 if [[ -z "${BW_SESSION}" ]]; then
@@ -13,3 +14,4 @@ else
 		exec bw "$@" --session "${BW_SESSION}"
 	fi
 fi
+{{ end -}}

@@ -1,5 +1,77 @@
 packages:
-  general:
+  system:
+    fedora:
+      install:
+        - bash-completion
+        - bat
+        - curl
+        - direnv
+        - distrobox
+        - eza
+        - fd-find
+        - fzf
+        - git
+        - git-delta
+        - gnome-shell-extension-appindicator
+        - gnome-shell-extension-caffeine
+        - gnome-shell-extension-dash-to-dock
+        - gnome-shell-extension-gsconnect
+        - gnome-shell-extension-just-perfection
+        - gnome-tweaks
+        - htop
+        - jq
+        - libnotify
+        - net-tools
+        - netcat
+        - pciutils
+        - podman-compose
+        - podman-docker
+        - ptyxis
+        - restic
+        - ripgrep
+        - rsync
+        - tcpdump
+        - tmux
+        - unzip
+        - vim
+        - virt-manager
+        - wget
+        - wl-clipboard
+        - zip
+        - zoxide
+      remove:
+        - fedora-bookmarks
+        - fedora-chromium-config
+        - fedora-chromium-config-gnome
+        - fedora-third-party
+        - gnome-characters
+        - gnome-classic-session
+        - gnome-contacts
+        - gnome-extensions-app
+        - gnome-font-viewer
+        - gnome-logs
+        - gnome-maps
+        - gnome-music
+        - gnome-photos
+        - gnome-shell-extension-apps-menu
+        - gnome-shell-extension-background-logo
+        - gnome-shell-extension-launch-new-instance
+        - gnome-shell-extension-places-menu
+        - gnome-shell-extension-window-list
+        - gnome-tour
+        - gnome-weather
+        - libreoffice-calc
+        - libreoffice-core
+        - libreoffice-emailmerge
+        - libreoffice-graphicfilter
+        - libreoffice-impress
+        - libreoffice-writer
+        - malcontent-control
+        - mediawriter
+        - toolbox
+        - totem-video-thumbnailer
+        - yelp
+  common:
     nix:
       - bash-language-server
       - dockerfile-language-server

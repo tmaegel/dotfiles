@@ -14,7 +14,7 @@
     "ghcr.io/devcontainers/features/nix:1": {
       "version": "latest",
       "multiUser": false,
-      "packages": "{{- range .packages.general.nix }}{{ . }},{{- end }}",
+      "packages": "{{- range .packages.common.nix }}{{ . }},{{- end }}",
     },
     "ghcr.io/prulloac/devcontainer-features/pre-commit:1": {
       "version": "latest",

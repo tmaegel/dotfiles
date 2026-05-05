@@ -6,6 +6,6 @@
 #              last command to exit with a non-zero status.
 set -eo pipefail
 
-{{ range .packages.general.nix -}}
+{{ range .packages.common.nix -}}
 sudo nix profile add nixpkgs#{{ . }}
 {{ end -}}

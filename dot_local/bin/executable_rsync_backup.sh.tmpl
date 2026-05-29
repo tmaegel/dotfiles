@@ -12,7 +12,7 @@ RSYNC_USER="toni"
 RSYNC_MODULE="rsync-data-toni"
 RSYNC_PASS_FILE="${HOME}/.rsync_pass"
 
-RSYNC_BACKUP_DIRS=("Anwendungen" "Bilder" "Dokumente" "Downloads" "Projekte" "System" "Videos")
+RSYNC_BACKUP_DIRS=("Anwendungen" "Bilder" "Bücher" "Dokumente" "Downloads" "Projekte" "System" "Videos")
 
 RSYNC_EXCLUDE_FILE="$(mktemp)"
 cat << EOF >> "${RSYNC_EXCLUDE_FILE}"
@@ -46,14 +46,14 @@ EOF
 cleanup() {
   status=$?
   if [ "${status}" -ne 0 ]; then
-    notify-send -a "rsync-backup" "Something went wrong during data synchronization"
+    notify-send -a "rsync_backup" "Something went wrong during data synchronization"
   fi
   rm -f "${RSYNC_EXCLUDE_FILE}"
 }
 
 trap cleanup EXIT
 
-notify-send -a "rsync-backup" "Start synchronizing data with homenas"
+notify-send -a "rsync_backup" "Start synchronizing data with homenas"
 
 # shellcheck disable=SC2068
 for DIR in ${RSYNC_BACKUP_DIRS[@]}; do
@@ -69,5 +69,5 @@ done
 
 rm -f "${RSYNC_EXCLUDE_FILE}"
 
-notify-send -a "rsync-backup" "Data was synchronized with homenas"
+notify-send -a "rsync_backup" "Data was synchronized with homenas"
 {{ end -}}

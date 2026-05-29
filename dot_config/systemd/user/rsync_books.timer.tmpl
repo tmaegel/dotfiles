@@ -1,0 +1,11 @@
+{{ if and .personal (eq .hosttype "desktop") (eq .chezmoi.os "linux") -}}
+[Unit]
+Description=Sync books from storage box
+
+[Timer]
+OnBootSec=15min
+OnUnitActiveSec=1d
+
+[Install]
+WantedBy=timers.target
+{{ end -}}

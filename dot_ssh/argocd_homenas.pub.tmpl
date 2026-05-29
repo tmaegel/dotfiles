@@ -1,0 +1,3 @@
+{{ if and .personal (eq .chezmoi.os "linux") -}}
+{{ (bitwarden "item" "ffa85e99-494e-4eae-8eec-b4360098102b").sshKey.publicKey }}
+{{ end -}}

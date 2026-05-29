@@ -10,8 +10,18 @@ Host *
   ControlMaster no
   ControlPath ~/.ssh/master-%r@%n:%p
   ControlPersist no
+Host github.com
+  User tmaegel
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/github_gitlab
+Host gitlab.com
+  User tnmgl
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/github_gitlab
 Host homenas
   User toni
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/homenas
 Host root.storage-box
   User {{ (bitwardenFields "item" "a762f1a5-2860-40c6-a51a-b42e012ecb40").username.value }}
   HostName {{ (bitwardenFields "item" "a762f1a5-2860-40c6-a51a-b42e012ecb40").hostname.value }}
@@ -24,4 +34,12 @@ Host omv.storage-box
   User {{ (bitwardenFields "item" "66dfd364-c2c9-424b-8113-b42e012f22bb").username.value }}
   HostName {{ (bitwardenFields "item" "66dfd364-c2c9-424b-8113-b42e012f22bb").hostname.value }}
   Port 23
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/hetzner_storage_box_omv
+Host k8s.storage-box
+  User {{ (bitwardenFields "item" "fba83e37-da22-401a-ada5-b4450096d329").username.value }}
+  HostName {{ (bitwardenFields "item" "fba83e37-da22-401a-ada5-b4450096d329").hostname.value }}
+  Port 23
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/hetzner_storage_box_k8s
 {{ end -}}

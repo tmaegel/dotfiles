@@ -6,13 +6,13 @@ flatpaks:
   - com.google.AndroidStudio
   - com.mattjakeman.ExtensionManager
   - com.ranfdev.DistroShelf
-  - com.slack.Slack
+  - org.mozilla.firefox
   - org.gimp.GIMP
   - org.gtk.Gtk3theme.adw-gtk3
   - org.gtk.Gtk3theme.adw-gtk3-dark
   - org.libreoffice.LibreOffice
   - org.localsend.localsend_app
-  - org.mozilla.Thunderbird
+  - org.mozilla.thunderbird_esr
   - org.signal.Signal
   - sh.loft.devpod
   - us.zoom.Zoom

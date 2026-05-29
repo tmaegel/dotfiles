@@ -32,11 +32,14 @@ packages:
         - rsync
         - tcpdump
         - tmux
+        - tree
         - unzip
         - vim
         - virt-manager
         - wget
         - wl-clipboard
+        - xz
+        - yq
         - zip
         - zoxide
       remove:
@@ -44,9 +47,10 @@ packages:
         - fedora-chromium-config
         - fedora-chromium-config-gnome
         - fedora-third-party
-        - gnome-characters
+        - firefox
+        - firefox-langpacks
+        - gnome-character
         - gnome-classic-session
-        - gnome-contacts
         - gnome-extensions-app
         - gnome-font-viewer
         - gnome-logs
@@ -65,6 +69,7 @@ packages:
         - libreoffice-emailmerge
         - libreoffice-graphicfilter
         - libreoffice-impress
+        - libreoffice-opensymbol-fonts
         - libreoffice-writer
         - malcontent-control
         - mediawriter
@@ -120,10 +125,13 @@ packages:
       - shellcheck
       - shfmt
       - tmux
+      - tree
       - unzip
       - vim
       - wget
+      - xz-utils
       - yamllint
+      - yq
       - zip
       - zoxide
   distrobox:
@@ -166,10 +174,13 @@ packages:
       - shfmt
       - tldr
       - tmux
+      - tree
       - unzip
       - vim
       - wget
       - wl-clipboard
+      - xz
       - yamllint
+      - yq
       - zip
       - zoxide

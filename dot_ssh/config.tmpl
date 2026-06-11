@@ -1,7 +1,7 @@
 {{ if and .personal (eq .hosttype "desktop") (eq .chezmoi.os "linux") -}}
 Host *
   ForwardAgent no
-  AddKeysToAgent no
+  AddKeysToAgent yes
   Compression no
   ServerAliveInterval 60
   ServerAliveCountMax 3

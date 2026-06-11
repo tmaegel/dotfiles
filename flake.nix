@@ -14,8 +14,9 @@
     {
       devShells.${system}.default = pkgs.mkShell {
         nativeBuildInputs = with pkgs; [
-          pre-commit
+          bashInteractive
           nixfmt
+          pre-commit
           prettier
           shellcheck
           shfmt

@@ -5,7 +5,7 @@ if ! command -v fzf > /dev/null; then
 fi
 
 source ~/.local/share/bash-completion/completions/fzf/fzf-bash-completion.sh
-[[ $- == *i* ]] && bind -x '"\t": fzf_bash_completion'
+bind -x '"\t": fzf_bash_completion'
 FZF_TAB_COMPLETION_PROMPT=' '
 # Reduce flickering
 _fzf_bash_completion_loading_msg() { echo "${PS1@P}${READLINE_LINE}" | tail -n1; }

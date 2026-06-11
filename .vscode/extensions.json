@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "bbenoist.Nix",
+    "brettm12345.nixfmt-vscode",
+    "esbenp.prettier-vscode",
+    "mkhl.direnv",
+    "mkhl.shfmt",
+    "redhat.vscode-yaml",
+    "timonwong.shellcheck"
+  ]
+}

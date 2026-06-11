@@ -2,9 +2,8 @@ vscode:
   extensions:
     - esbenp.prettier-vscode
     - GitHub.copilot-chat
+    - mkhl.direnv
     - mkhl.shfmt
-    - ms-vscode-remote.remote-containers
-    - ms-vscode-remote.remote-ssh
     - redhat.vscode-yaml
     - timonwong.shellcheck
     - vscodevim.vim

@@ -1,2 +1,6 @@
-README.md
+.envrc
+.gitignore
+*.md
+flake.lock
+flake.nix
 install.sh

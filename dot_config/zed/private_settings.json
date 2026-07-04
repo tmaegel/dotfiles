@@ -1,0 +1,160 @@
+{
+  "hide_mouse": "on_typing",
+  "file_finder": {
+    "modal_max_width": "small",
+  },
+  "diff_view_style": "unified",
+  "cli_default_open_behavior": "new_window",
+  "edit_predictions": {
+    "provider": "copilot",
+  },
+  "agent": {
+    "default_profile": "ask",
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-5.5",
+      "enable_thinking": true,
+      "effort": "high",
+    },
+    "dock": "right",
+    "sidebar_side": "right",
+    "favorite_models": [],
+    "model_parameters": [],
+  },
+  "zoomed_padding": true,
+  "active_pane_modifiers": {
+    "inactive_opacity": 1.0,
+    "border_size": 0.0,
+  },
+  "git_panel": {
+    "show_count_badge": false,
+    "file_icons": false,
+    "tree_view": false,
+    "default_width": 240.0,
+    "dock": "left",
+  },
+  "git": {
+    "path_style": "file_name_first",
+    "git_gutter": "tracked_files",
+    "hunk_style": "unstaged_hollow",
+    "inline_blame": {
+      "show_commit_summary": true,
+      "delay_ms": 1000,
+      "enabled": true,
+      "padding": 8,
+    },
+  },
+  "gutter": {
+    "line_numbers": true,
+  },
+  "preview_tabs": {
+    "enable_preview_from_file_finder": false,
+    "enable_preview_file_from_code_navigation": false,
+    "enable_preview_from_multibuffer": false,
+    "enable_preview_from_project_panel": false,
+    "enabled": false,
+  },
+  "base_keymap": "VSCode",
+  "buffer_line_height": {
+    "custom": 1.5,
+  },
+  "cursor_blink": false,
+  "tab_bar": {
+    "show": true,
+    "show_pinned_tabs_in_separate_row": false,
+    "show_tab_bar_buttons": false,
+    "show_nav_history_buttons": false,
+  },
+  "tabs": {
+    "show_close_button": "hover",
+    "show_diagnostics": "off",
+    "file_icons": true,
+    "git_status": false,
+  },
+  "title_bar": {
+    "button_layout": "platform_default",
+    "show_menus": false,
+    "show_user_picture": false,
+    "show_user_menu": false,
+    "show_sign_in": false,
+    "show_onboarding_banner": true,
+    "show_project_items": true,
+    "show_branch_name": true,
+    "show_branch_status_icon": false,
+  },
+  "debugger": {
+    "button": true,
+  },
+  "search": {
+    "button": true,
+  },
+  "diagnostics": {
+    "inline": {
+      "min_column": 0,
+      "padding": 4,
+      "enabled": true,
+    },
+    "button": true,
+  },
+  "terminal": {
+    "copy_on_select": true,
+    "minimum_contrast": 45.0,
+    "toolbar": {
+      "breadcrumbs": false,
+    },
+    "button": true,
+    "font_size": 13,
+  },
+  "status_bar": {
+    "show_active_file": true,
+    "line_endings_button": true,
+    "cursor_position_button": true,
+    "active_language_button": true,
+  },
+  "toolbar": {
+    "code_actions": false,
+    "agent_review": false,
+    "selections_menu": false,
+    "quick_actions": false,
+    "breadcrumbs": false,
+  },
+  "minimap": {
+    "show": "never",
+  },
+  "scrollbar": {
+    "show": "never",
+  },
+  "which_key": {
+    "enabled": false,
+  },
+  "proxy": "",
+  "project_panel": {
+    "auto_reveal_entries": false,
+    "diagnostic_badges": true,
+    "button": true,
+    "hide_root": false,
+    "indent_guides": {
+      "show": "always",
+    },
+    "sticky_scroll": true,
+    "git_status_indicator": true,
+    "scrollbar": {
+      "horizontal_scroll": false,
+      "show": "never",
+    },
+    "dock": "left",
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+    "anthropic_retention": false,
+  },
+  "vim_mode": true,
+  "ui_font_size": 15.0,
+  "buffer_font_size": 13,
+  "theme": {
+    "mode": "system",
+    "light": "One Dark Pro Vivid",
+    "dark": "One Dark Pro Vivid",
+  },
+}

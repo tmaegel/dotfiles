@@ -1,9 +1,32 @@
 {
+  "horizontal_scroll_margin": 8.0,
+  "vertical_scroll_margin": 4.0,
+  "relative_line_numbers": "enabled",
+  "code_lens": "menu",
+  "inlay_hints": {
+    "enabled": false,
+  },
+  "completion_menu_scrollbar": "never",
+  "show_completions_on_input": true,
+  "show_completion_documentation": true,
+  "indent_guides": {
+    "background_coloring": "disabled",
+    "coloring": "indent_aware",
+  },
+  "vim": {
+    "show_edit_predictions_in_normal_mode": false,
+    "gdefault": true,
+    "use_smartcase_find": true,
+    "toggle_relative_line_numbers": false,
+  },
+  "show_signature_help_after_edits": true,
+  "auto_signature_help": true,
+  "inline_code_actions": false,
   "hide_mouse": "on_typing",
   "file_finder": {
     "modal_max_width": "small",
   },
-  "diff_view_style": "unified",
+  "diff_view_style": "split",
   "cli_default_open_behavior": "new_window",
   "edit_predictions": {
     "provider": "copilot",
@@ -125,10 +148,12 @@
     "show": "never",
   },
   "which_key": {
+    "delay_ms": 1000,
     "enabled": false,
   },
   "proxy": "",
   "project_panel": {
+    "hide_hidden": false,
     "auto_reveal_entries": false,
     "diagnostic_badges": true,
     "button": true,
@@ -156,5 +181,9 @@
     "mode": "system",
     "light": "One Dark Pro Vivid",
     "dark": "One Dark Pro Vivid",
+  },
+  "file_types": {
+    "Dockerfile": ["Dockerfile", "Dockerfile.*"],
+    "JSON": ["json", "jsonc", "*.code-snippets"],
   },
 }

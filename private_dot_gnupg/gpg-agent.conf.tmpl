@@ -1,9 +1,0 @@
-{{ if and (eq .hosttype "desktop") (eq .chezmoi.os "linux") -}}
-enable-ssh-support
-grab
-default-cache-ttl 600
-default-cache-ttl-ssh 600
-max-cache-ttl 600
-max-cache-ttl-ssh 600
-allow-loopback-pinentry
-{{ end -}}

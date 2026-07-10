@@ -1,7 +1,9 @@
+{{ if ne .chezmoi.osRelease.id "nixos" -}}
 #!/usr/bin/env bash
 
 {{ if eq .chezmoi.osRelease.id "ubuntu" -}}
 if command -v fdfind > /dev/null; then
     alias fd=fdfind
 fi
+{{ end -}}
 {{ end -}}

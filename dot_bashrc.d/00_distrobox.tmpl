@@ -10,5 +10,10 @@ fi
 
 if command -v distrobox > /dev/null; then
   alias dbox="distrobox"
+
+  dboxenter() {
+    local box
+    box=$(distrobox list --no-color 2>/dev/null | tail -n +2 | awk -F'|' '{gsub(/[[:space:]]+/, "", $2); print $2}' | fzf) && distrobox enter "$box"
+  }
 fi
 {{ end -}}

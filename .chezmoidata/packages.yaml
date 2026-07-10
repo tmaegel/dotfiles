@@ -106,20 +106,16 @@ packages:
       - ansible-lint
       - bash-completion
       - bat
-      - black
       - curl
       - direnv
       - eza
       - fd-find
-      - flake8
       - fzf
       - gawk
       - gcc
       - git-delta
       - gopls
-      - isort
       - jq
-      - mypy
       - neovim
       - ripgrep
       - shellcheck
@@ -139,7 +135,7 @@ packages:
       - android-tools
       - bash-completion
       - bat
-      - black
+      - ruff
       - curl
       - dconf
       - direnv
@@ -164,9 +160,6 @@ packages:
       - pinentry-gnome3
       - pre-commit
       - python3-ansible-lint
-      - python3-flake8
-      - python3-isort
-      - python3-mypy
       - restic
       - ripgrep
       - rsync

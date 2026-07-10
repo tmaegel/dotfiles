@@ -1,3 +1,4 @@
+{{ if ne .chezmoi.osRelease.id "nixos" -}}
 # .bashrc
 
 # Source global definitions
@@ -36,3 +37,4 @@ if [ -d ~/.bashrc.d ]; then
   done
 fi
 unset rc
+{{ end -}}

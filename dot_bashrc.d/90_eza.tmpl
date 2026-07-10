@@ -1,3 +1,4 @@
+{{ if ne .chezmoi.osRelease.id "nixos" -}}
 #!/usr/bin/env bash
 
 if command -v eza > /dev/null; then
@@ -9,3 +10,4 @@ alias la="ls -la"
 alias lat="ls -la --tree"
 alias ll="ls -l"
 alias llt="ls -l --tree"
+{{ end -}}

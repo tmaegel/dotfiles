@@ -1,0 +1,9 @@
+{{ if ne .chezmoi.osRelease.id "nixos" -}}
+#!/usr/bin/env bash
+
+if ! command -v direnv > /dev/null; then
+  return
+fi
+
+eval "$(direnv hook bash)"
+{{ end -}}

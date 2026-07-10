@@ -1,0 +1,3 @@
+{{ if ne .chezmoi.osRelease.id "nixos" -}}
+experimental-features = nix-command flakes
+{{ end -}}

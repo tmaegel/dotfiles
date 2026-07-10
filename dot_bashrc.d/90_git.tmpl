@@ -1,0 +1,4 @@
+{{ if ne .chezmoi.osRelease.id "nixos" -}}
+#!/usr/bin/env bash
+alias g="git"
+{{ end -}}

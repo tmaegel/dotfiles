@@ -1,0 +1,4 @@
+{{ if ne .chezmoi.osRelease.id "nixos" -}}
+#!/usr/bin/env bash
+export PAGER="less"
+{{ end -}}

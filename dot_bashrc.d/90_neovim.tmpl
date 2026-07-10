@@ -1,3 +1,4 @@
+{{ if ne .chezmoi.osRelease.id "nixos" -}}
 #!/usr/bin/env bash
 
 if command -v nvim > /dev/null; then
@@ -10,3 +11,4 @@ else
     export VISUAL="vim"
     alias vimdiff="vimdiff"
 fi
+{{ end -}}

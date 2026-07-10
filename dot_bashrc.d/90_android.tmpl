@@ -1,3 +1,4 @@
+{{ if ne .chezmoi.osRelease.id "nixos" -}}
 #!/usr/bin/env bash
 if [[ -d "/opt/flutter/bin" ]]; then
   if ! [[ "$PATH" =~ "/opt/flutter/bin" ]]; then
@@ -20,3 +21,4 @@ if [[ -d "${ANDROID_HOME}/platform-tools" ]]; then
   fi
 fi
 export PATH
+{{ end -}}
